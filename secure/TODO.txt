@@ -78,19 +78,12 @@ A projekt jelenlegi felépítését, különösen a felhasználói felületet (U
 * „A lefoglalt mosógéped most szabad”
 * „A gép hibát észlelt, karbantartás alatt van”
 
-Ezt meg lehet csinálni e-mailben, push notificationként, vagy csak az appban.
+Ezt meg kell csinálni e-mailben, push notificationként, az appban (electron)
 
-### 💰 Fizetés / Egyenleg kezelés
-
-* Egyenleg feltöltése (pl. kártyával, mobilon)
-* Árkalkuláció: mennyibe kerül a mosás / szárítás
-* Költségstatisztika
-* Blokkok / tranzakciós előzmények
 
 ### 🧼 Gép részletes nézete
 
 * Gép típus, kapacitás, ciklus hossza
-* Aktuális felhasználó (ha megengedett)
 * Hibakód vagy hibaüzenet kijelzése
 * Mosás hátralévő ideje (pl. “Hátralévő idő: 12 perc”)
 
@@ -106,12 +99,10 @@ Ezt meg lehet csinálni e-mailben, push notificationként, vagy csak az appban.
 ## 💡 Extra UX / UI ötletek
 
 * **Dashboard** a kezdőlapon:
-
   * Összegzés: hány gép szabad, hány foglalt
   * Saját legutóbbi mosás
   * Rövid statisztikai kártyák (pl. “Ebben a hónapban 12 mosás”)
 * **Géptérkép** vagy vizuális elrendezés (pl. ha több mosoda van → kattintható térkép / alaprajz)
-* **Dark mode / light mode**
 
 ---
 

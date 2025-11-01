@@ -84,7 +84,7 @@ export default async function DashboardPage() {
         <div className="mt-12">
           <h2 className="text-3xl font-bold mb-6">Quick Machine Access</h2>
           <RoomSelector rooms={rooms || []} />
-          <MachineGrid />
+          <MachineGrid rooms={rooms || []} />
         </div>
       </div>
 
