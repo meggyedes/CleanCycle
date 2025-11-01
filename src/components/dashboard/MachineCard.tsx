@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 import { Database } from '@/types/database.types'
 import StartMachineModal from './StartMachineModal'
 
@@ -17,6 +18,7 @@ interface MachineCardProps {
 }
 
 export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
+  const t = useTranslations('machines')
   const [showModal, setShowModal] = useState(false)
   const [timeRemaining, setTimeRemaining] = useState<string>('')
 
@@ -28,7 +30,7 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
         const diff = endTime.getTime() - now.getTime()
 
         if (diff <= 0) {
-          setTimeRemaining('Lejárt!')
+          setTimeRemaining('Expired')
           onUpdate()
         } else {
           const minutes = Math.floor(diff / 60000)
@@ -61,17 +63,17 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
   const getStatusText = () => {
     switch (machine.status) {
       case 'free':
-        return 'Szabad'
+        return t('status.available')
       case 'running':
-        return 'Fut'
+        return t('status.inUse')
       case 'booked':
-        return 'Foglalt'
+        return t('status.reserved')
       case 'maintenance':
-        return 'Karbantartás'
+        return t('status.maintenance')
       case 'broken':
-        return 'Hibás'
+        return 'Broken'
       default:
-        return 'Ismeretlen'
+        return 'Unknown'
     }
   }
 
@@ -120,7 +122,7 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
           {/* Time Remaining */}
           {machine.status === 'running' && timeRemaining && (
             <div className="mb-4">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Hátralévő idő:</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Time Remaining:</p>
               <p className="text-2xl font-bold text-gray-800 dark:text-white">
                 {timeRemaining}
               </p>
@@ -131,7 +133,7 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
           {machine.status === 'free' && (
             <div className="mb-4">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Alapértelmezett idő: {machine.default_duration} perc
+                Default Duration: {machine.default_duration} minutes
               </p>
             </div>
           )}
@@ -142,14 +144,14 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
               onClick={() => setShowModal(true)}
               className="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded shadow-lg transition duration-200 uppercase text-sm tracking-wide"
             >
-              Indítás
+              Start
             </button>
           )}
 
           {machine.status === 'running' && machine.currentSession && (
             <div className="text-sm text-gray-600 dark:text-gray-400">
-              <p>Indítva: {new Date(machine.currentSession.start_time).toLocaleTimeString('hu-HU', { hour: '2-digit', minute: '2-digit' })}</p>
-              <p>Várható vége: {new Date(machine.currentSession.end_time).toLocaleTimeString('hu-HU', { hour: '2-digit', minute: '2-digit' })}</p>
+              <p>Started: {new Date(machine.currentSession.start_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+              <p>Expected End: {new Date(machine.currentSession.end_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
             </div>
           )}
         </div>

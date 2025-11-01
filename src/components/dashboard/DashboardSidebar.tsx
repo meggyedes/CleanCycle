@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import LogoutButton from './LogoutButton'
 import SidebarLanguageSwitcher from './SidebarLanguageSwitcher'
 
@@ -11,14 +12,15 @@ interface DashboardSidebarProps {
 }
 
 export default function DashboardSidebar({ activeTab, onTabChange, userEmail }: DashboardSidebarProps) {
+  const t = useTranslations('dashboard')
   const [isCollapsed, setIsCollapsed] = useState(false)
 
   const menuItems = [
-    { id: 'overview', label: 'Dashboard', icon: '📊', color: 'bg-teal-50 text-teal-700' },
-    { id: 'machines', label: 'Machines', icon: '🧺', color: 'bg-blue-50 text-blue-700' },
-    { id: 'statistics', label: 'Statistics', icon: '📈', color: 'bg-purple-50 text-purple-700' },
-    { id: 'reservations', label: 'Reservations', icon: '📅', color: 'bg-orange-50 text-orange-700' },
-    { id: 'profile', label: 'Profile', icon: '👤', color: 'bg-pink-50 text-pink-700' },
+    { id: 'overview', label: t('overview'), icon: '📊', color: 'bg-teal-50 text-teal-700' },
+    { id: 'machines', label: t('machines'), icon: '🧺', color: 'bg-blue-50 text-blue-700' },
+    { id: 'statistics', label: t('statistics'), icon: '📈', color: 'bg-purple-50 text-purple-700' },
+    { id: 'reservations', label: t('reservations'), icon: '📅', color: 'bg-orange-50 text-orange-700' },
+    { id: 'profile', label: t('profile'), icon: '👤', color: 'bg-pink-50 text-pink-700' },
   ] as const
 
   return (

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { createClient } from '@/lib/supabase/client'
 import MachineCard from './MachineCard'
 import { Database } from '@/types/database.types'
@@ -18,6 +19,8 @@ interface MachineGridProps {
 }
 
 export default function MachineGrid({ rooms }: MachineGridProps) {
+  const t = useTranslations('machines')
+  const tCommon = useTranslations('common')
   const [machines, setMachines] = useState<MachineWithSession[]>([])
   const [selectedRoom, setSelectedRoom] = useState<number | null>(null)
   const [loading, setLoading] = useState(true)
@@ -124,7 +127,7 @@ export default function MachineGrid({ rooms }: MachineGridProps) {
       {/* Refresh Button */}
       <div className="flex justify-between items-center bg-teal-50 p-4 rounded shadow">
         <div className="text-sm text-gray-700">
-          🔄 Automatikus frissítés 5 másodpercenként
+          🔄 Auto-refresh every 5 seconds
         </div>
         <button
           onClick={fetchMachines}
@@ -134,14 +137,14 @@ export default function MachineGrid({ rooms }: MachineGridProps) {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          Frissítés most
+          Refresh Now
         </button>
       </div>
 
       {loading && (
         <div className="text-center py-8">
           <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600"></div>
-          <p className="mt-2 text-gray-600">Betöltés...</p>
+          <p className="mt-2 text-gray-600">{tCommon('loading')}</p>
         </div>
       )}
 
@@ -149,7 +152,7 @@ export default function MachineGrid({ rooms }: MachineGridProps) {
       {washers.length > 0 && (
         <div>
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
-            🌊 Mosógépek
+            🌊 {t('washers')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {washers.map(machine => (
@@ -163,7 +166,7 @@ export default function MachineGrid({ rooms }: MachineGridProps) {
       {dryers.length > 0 && (
         <div>
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
-            🌪️ Szárítógépek
+            🌪️ {t('dryers')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {dryers.map(machine => (
@@ -176,7 +179,7 @@ export default function MachineGrid({ rooms }: MachineGridProps) {
       {/* No machines message */}
       {machines.length === 0 && !loading && (
         <div className="text-center py-12 bg-gray-50 rounded-lg">
-          <p className="text-gray-600 text-lg">Nincs gép ebben a szobában</p>
+          <p className="text-gray-600 text-lg">No machines in this room</p>
         </div>
       )}
     </div>

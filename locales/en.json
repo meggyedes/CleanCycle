@@ -188,9 +188,16 @@
     "welcome": "Welcome back, {name}!",
     "overview": "Overview",
     "machines": "Machines",
+    "statistics": "Statistics",
+    "reservations": "Reservations",
+    "profile": "Profile",
     "schedule": "Schedule",
     "history": "History",
-    "notifications": "Notifications"
+    "notifications": "Notifications",
+    "quickMachineAccess": "Quick Machine Access",
+    "logout": "Logout",
+    "selectRoom": "Select Room",
+    "noRoomsAvailable": "No rooms available"
   },
   "machines": {
     "title": "Machines",

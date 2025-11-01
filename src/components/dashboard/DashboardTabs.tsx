@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { Database } from '@/types/database.types'
 import DashboardSummary from './DashboardSummary'
 import StatsDashboard from './StatsDashboard'
@@ -23,14 +24,15 @@ interface DashboardTabsProps {
 type TabType = 'overview' | 'machines' | 'statistics' | 'reservations' | 'profile'
 
 export default function DashboardTabs({ userId, rooms, machines, userEmail }: DashboardTabsProps) {
+  const t = useTranslations('dashboard')
   const [activeTab, setActiveTab] = useState<TabType>('overview')
 
   const tabs: { id: TabType; label: string; icon: string }[] = [
-    { id: 'overview', label: 'Overview', icon: '📊' },
-    { id: 'machines', label: 'Machines', icon: '🧺' },
-    { id: 'statistics', label: 'Statistics', icon: '📈' },
-    { id: 'reservations', label: 'Reservations', icon: '📅' },
-    { id: 'profile', label: 'Profile', icon: '👤' }
+    { id: 'overview', label: t('overview'), icon: '📊' },
+    { id: 'machines', label: t('machines'), icon: '🧺' },
+    { id: 'statistics', label: t('statistics'), icon: '📈' },
+    { id: 'reservations', label: t('reservations'), icon: '📅' },
+    { id: 'profile', label: t('profile'), icon: '👤' }
   ]
 
   return (

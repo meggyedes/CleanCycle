@@ -179,9 +179,16 @@
     "welcome": "Üdvözöljük újra, {name}!",
     "overview": "Áttekintés",
     "machines": "Gépek",
+    "statistics": "Statisztikák",
+    "reservations": "Foglalások",
+    "profile": "Profil",
     "schedule": "Ütemezés",
     "history": "Előzmények",
-    "notifications": "Értesítések"
+    "notifications": "Értesítések",
+    "quickMachineAccess": "Gyors gépelérés",
+    "logout": "Kijelentkezés",
+    "selectRoom": "Szoba kiválasztása",
+    "noRoomsAvailable": "Nincsenek elérhető szobák"
   },
   "machines": {
     "title": "Gépek",
