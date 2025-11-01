@@ -1,0 +1,222 @@
+{
+  "common": {
+    "appName": "CleanCycle",
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "cancel": "Annulla",
+    "confirm": "Conferma",
+    "save": "Salva",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Avanti",
+    "submit": "Invia",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "reset": "Reimposta",
+    "logout": "Esci",
+    "profile": "Profilo",
+    "settings": "Impostazioni",
+    "help": "Aiuto",
+    "about": "Informazioni"
+  },
+  "landing": {
+    "title": "CleanCycle",
+    "subtitle": "Sistema intelligente di gestione lavanderia",
+    "description": "Gestisci la tua lavanderia in modo efficiente con monitoraggio delle macchine in tempo reale, pianificazione intelligente e notifiche automatiche.",
+    "getStarted": "Inizia",
+    "learnMore": "Scopri di più",
+    "features": {
+      "title": "Funzionalità",
+      "subtitle": "Tutto ciò di cui hai bisogno per una gestione efficiente della lavanderia",
+      "realtime": {
+        "title": "Monitoraggio in tempo reale",
+        "description": "Monitora la disponibilità e lo stato delle macchine in tempo reale. Sappi esattamente quando le macchine sono libere."
+      },
+      "scheduling": {
+        "title": "Pianificazione intelligente",
+        "description": "Prenota le macchine in anticipo e ricevi una notifica quando il tuo slot è pronto."
+      },
+      "notifications": {
+        "title": "Notifiche istantanee",
+        "description": "Ricevi notifiche quando il bucato è pronto o quando le macchine diventano disponibili."
+      },
+      "analytics": {
+        "title": "Analisi dell'utilizzo",
+        "description": "Traccia i tuoi modelli di lavaggio e ottimizza il tuo programma di lavaggio."
+      },
+      "multiRoom": {
+        "title": "Più stanze",
+        "description": "Gestisci più lavanderie con macchine e orari diversi."
+      },
+      "secure": {
+        "title": "Sicuro e privato",
+        "description": "I tuoi dati sono crittografati e sicuri. Rispettiamo la tua privacy."
+      }
+    },
+    "cta": {
+      "title": "Pronto per iniziare?",
+      "description": "Unisciti a CleanCycle oggi e rendi la gestione della lavanderia semplice.",
+      "button": "Registrati ora"
+    }
+  },
+  "auth": {
+    "backToHome": "Indietro",
+    "login": {
+      "title": "Accedi",
+      "subtitle": "Bentornato su CleanCycle",
+      "email": "Indirizzo email",
+      "emailPlaceholder": "Inserisci la tua email",
+      "username": "Nome utente",
+      "usernamePlaceholder": "Inserisci il tuo nome utente",
+      "password": "Password",
+      "passwordPlaceholder": "Inserisci la tua password",
+      "rememberMe": "Ricordami",
+      "forgotPassword": "Password dimenticata?",
+      "submit": "Accedi",
+      "noAccount": "Non hai un account?",
+      "signUp": "Registrati ora!",
+      "success": "Accesso effettuato con successo!",
+      "error": "Credenziali non valide. Riprova."
+    },
+    "register": {
+      "title": "Crea account",
+      "subtitle": "Unisciti a CleanCycle oggi",
+      "firstName": "Nome",
+      "firstNamePlaceholder": "Inserisci il tuo nome",
+      "lastName": "Cognome",
+      "lastNamePlaceholder": "Inserisci il tuo cognome",
+      "username": "Nome utente",
+      "usernamePlaceholder": "Scegli un nome utente",
+      "email": "Indirizzo email",
+      "emailPlaceholder": "Inserisci la tua email",
+      "password": "Password",
+      "passwordPlaceholder": "Crea una password",
+      "confirmPassword": "Conferma password",
+      "confirmPasswordPlaceholder": "Conferma la tua password",
+      "roomNumber": "Numero stanza",
+      "roomNumberPlaceholder": "Inserisci il numero della stanza (es. 136)",
+      "phoneNumber": "Numero di telefono (opzionale)",
+      "phoneNumberPlaceholder": "Inserisci il tuo numero di telefono",
+      "submit": "Crea account",
+      "hasAccount": "Hai già un account?",
+      "signIn": "Accedi",
+      "success": "Account creato con successo! Verifica la tua email.",
+      "error": "Registrazione fallita. Riprova.",
+      "validation": {
+        "firstNameRequired": "Il nome è obbligatorio",
+        "firstNameLetters": "Il nome può contenere solo lettere",
+        "lastNameRequired": "Il cognome è obbligatorio",
+        "lastNameLetters": "Il cognome può contenere solo lettere",
+        "usernameRequired": "Il nome utente è obbligatorio",
+        "usernameFormat": "Il nome utente può contenere solo lettere, numeri e underscore",
+        "usernameNoSpaces": "Il nome utente non può contenere spazi",
+        "emailRequired": "L'indirizzo email è obbligatorio",
+        "emailInvalid": "Inserisci un indirizzo email valido",
+        "passwordRequired": "La password è obbligatoria",
+        "passwordLength": "La password deve contenere almeno 8 caratteri",
+        "passwordUppercase": "La password deve contenere almeno una lettera maiuscola",
+        "passwordLowercase": "La password deve contenere almeno una lettera minuscola",
+        "passwordNumber": "La password deve contenere almeno un numero",
+        "passwordMatch": "Le password non corrispondono",
+        "roomNumberRequired": "Il numero della stanza è obbligatorio",
+        "roomNumberFormat": "Il numero della stanza può contenere solo numeri",
+        "phoneNumberFormat": "Inserisci un numero di telefono valido"
+      },
+      "passwordStrength": {
+        "label": "Forza della password",
+        "weak": "Debole",
+        "medium": "Media",
+        "strong": "Forte",
+        "requirementsTitle": "Requisiti",
+        "requirements": {
+          "minLength": "Almeno 8 caratteri",
+          "uppercase": "Almeno una lettera maiuscola",
+          "lowercase": "Almeno una lettera minuscola",
+          "number": "Almeno un numero"
+        }
+      }
+    },
+    "verification": {
+      "title": "Verifica la tua email",
+      "subtitle": "Abbiamo inviato un codice a 6 cifre alla tua email",
+      "code": "Codice di verifica",
+      "codePlaceholder": "Inserisci il codice a 6 cifre",
+      "submit": "Verifica email",
+      "resend": "Invia di nuovo il codice",
+      "resendSuccess": "Codice di verifica inviato!",
+      "success": "Email verificata con successo!",
+      "error": "Codice non valido o scaduto. Riprova.",
+      "expired": "Il codice di verifica è scaduto. Richiedine uno nuovo."
+    },
+    "forgotPassword": {
+      "title": "Reimposta password",
+      "subtitle": "Inserisci la tua email per ricevere un link di reimpostazione",
+      "email": "Indirizzo email",
+      "emailPlaceholder": "Inserisci la tua email",
+      "submit": "Invia link",
+      "backToLogin": "Torna al login",
+      "success": "Link di reimpostazione inviato! Controlla la tua email.",
+      "error": "Invio del link fallito. Riprova."
+    },
+    "resetPassword": {
+      "title": "Crea nuova password",
+      "subtitle": "Inserisci la tua nuova password",
+      "password": "Nuova password",
+      "passwordPlaceholder": "Inserisci la nuova password",
+      "confirmPassword": "Conferma nuova password",
+      "confirmPasswordPlaceholder": "Conferma la nuova password",
+      "submit": "Reimposta password",
+      "success": "Password reimpostata con successo! Ora puoi accedere.",
+      "error": "Reimpostazione fallita. Riprova.",
+      "tokenExpired": "Il link è scaduto. Richiedine uno nuovo."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Bentornato, {name}!",
+    "overview": "Panoramica",
+    "machines": "Macchine",
+    "schedule": "Programma",
+    "history": "Cronologia",
+    "notifications": "Notifiche"
+  },
+  "machines": {
+    "title": "Macchine",
+    "available": "Disponibile",
+    "inUse": "In uso",
+    "maintenance": "Manutenzione",
+    "washers": "Lavatrici",
+    "dryers": "Asciugatrici",
+    "reserve": "Prenota",
+    "cancel": "Annulla prenotazione",
+    "status": {
+      "available": "Disponibile",
+      "inUse": "In uso",
+      "reserved": "Prenotato",
+      "maintenance": "Manutenzione",
+      "offline": "Offline"
+    }
+  },
+  "notifications": {
+    "title": "Notifiche",
+    "markAllRead": "Segna tutto come letto",
+    "noNotifications": "Nessuna notifica",
+    "types": {
+      "machineAvailable": "Macchina disponibile",
+      "cycleComplete": "Ciclo completato",
+      "reservationReminder": "Promemoria prenotazione",
+      "maintenance": "Avviso di manutenzione"
+    }
+  },
+  "errors": {
+    "generic": "Qualcosa è andato storto. Riprova.",
+    "network": "Errore di rete. Controlla la tua connessione.",
+    "unauthorized": "Non sei autorizzato a eseguire questa azione.",
+    "notFound": "La risorsa richiesta non è stata trovata.",
+    "serverError": "Errore del server. Riprova più tardi."
+  }
+}
+

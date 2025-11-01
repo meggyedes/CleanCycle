@@ -1,0 +1,222 @@
+{
+  "common": {
+    "appName": "CleanCycle",
+    "loading": "Betöltés...",
+    "error": "Hiba",
+    "success": "Sikeres",
+    "cancel": "Mégse",
+    "confirm": "Megerősítés",
+    "save": "Mentés",
+    "delete": "Törlés",
+    "edit": "Szerkesztés",
+    "close": "Bezárás",
+    "back": "Vissza",
+    "next": "Következő",
+    "submit": "Küldés",
+    "search": "Keresés",
+    "filter": "Szűrés",
+    "reset": "Visszaállítás",
+    "logout": "Kijelentkezés",
+    "profile": "Profil",
+    "settings": "Beállítások",
+    "help": "Súgó",
+    "about": "Névjegy"
+  },
+  "landing": {
+    "title": "CleanCycle",
+    "subtitle": "Intelligens Mosodakezelő Rendszer",
+    "description": "Kezelje mosodáját hatékonyan valós idejű gépkövetéssel, intelligens ütemezéssel és automatikus értesítésekkel.",
+    "getStarted": "Kezdjük el",
+    "learnMore": "Tudj meg többet",
+    "features": {
+      "title": "Funkciók",
+      "subtitle": "Minden, amire szüksége van a hatékony mosodakezeléshez",
+      "realtime": {
+        "title": "Valós idejű követés",
+        "description": "Kövesse nyomon a gépek elérhetőségét és állapotát valós időben. Tudja pontosan, mikor szabadulnak fel a gépek."
+      },
+      "scheduling": {
+        "title": "Intelligens ütemezés",
+        "description": "Foglalja le a gépeket előre, és kapjon értesítést, amikor az időpontja elérkezett."
+      },
+      "notifications": {
+        "title": "Azonnali értesítések",
+        "description": "Kapjon értesítést, amikor a mosás elkészült, vagy amikor gépek szabadulnak fel."
+      },
+      "analytics": {
+        "title": "Használati statisztikák",
+        "description": "Kövesse nyomon mosási szokásait és optimalizálja mosási ütemezését."
+      },
+      "multiRoom": {
+        "title": "Több mosószoba",
+        "description": "Kezeljen több mosószobát különböző gépekkel és ütemezésekkel."
+      },
+      "secure": {
+        "title": "Biztonságos és privát",
+        "description": "Adatai titkosítva és biztonságban vannak. Tiszteletben tartjuk magánszféráját."
+      }
+    },
+    "cta": {
+      "title": "Készen áll az indulásra?",
+      "description": "Csatlakozzon a CleanCycle-hoz még ma, és tegye könnyűvé a mosodakezelést.",
+      "button": "Regisztráljon most"
+    }
+  },
+  "auth": {
+    "backToHome": "Vissza",
+    "login": {
+      "title": "Bejelentkezés",
+      "subtitle": "Üdvözöljük újra a CleanCycle-ban",
+      "email": "Email cím",
+      "emailPlaceholder": "Adja meg email címét",
+      "username": "Felhasználónév",
+      "usernamePlaceholder": "Adja meg felhasználónevét",
+      "password": "Jelszó",
+      "passwordPlaceholder": "Adja meg jelszavát",
+      "rememberMe": "Emlékezz rám",
+      "forgotPassword": "Elfelejtette jelszavát?",
+      "submit": "Bejelentkezés",
+      "noAccount": "Még nincs fiókja?",
+      "signUp": "Regisztráljon most!",
+      "success": "Sikeres bejelentkezés!",
+      "error": "Érvénytelen bejelentkezési adatok. Kérjük, próbálja újra."
+    },
+    "register": {
+      "title": "Fiók létrehozása",
+      "subtitle": "Csatlakozzon a CleanCycle-hoz még ma",
+      "firstName": "Keresztnév",
+      "firstNamePlaceholder": "Adja meg keresztnevét",
+      "lastName": "Vezetéknév",
+      "lastNamePlaceholder": "Adja meg vezetéknevét",
+      "username": "Felhasználónév",
+      "usernamePlaceholder": "Válasszon felhasználónevet",
+      "email": "Email cím",
+      "emailPlaceholder": "Adja meg email címét",
+      "password": "Jelszó",
+      "passwordPlaceholder": "Hozzon létre jelszót",
+      "confirmPassword": "Jelszó megerősítése",
+      "confirmPasswordPlaceholder": "Erősítse meg jelszavát",
+      "roomNumber": "Szobaszám",
+      "roomNumberPlaceholder": "Adja meg a szobaszámot (pl. 136)",
+      "phoneNumber": "Telefonszám (opcionális)",
+      "phoneNumberPlaceholder": "Adja meg telefonszámát",
+      "submit": "Fiók létrehozása",
+      "hasAccount": "Már van fiókja?",
+      "signIn": "Jelentkezzen be",
+      "success": "Fiók sikeresen létrehozva! Kérjük, erősítse meg email címét.",
+      "error": "Regisztráció sikertelen. Kérjük, próbálja újra.",
+      "validation": {
+        "firstNameRequired": "Keresztnév megadása kötelező",
+        "firstNameLetters": "Keresztnév csak betűket tartalmazhat",
+        "lastNameRequired": "Vezetéknév megadása kötelező",
+        "lastNameLetters": "Vezetéknév csak betűket tartalmazhat",
+        "usernameRequired": "Felhasználónév megadása kötelező",
+        "usernameFormat": "Felhasználónév csak betűket, számokat és aláhúzást tartalmazhat",
+        "usernameNoSpaces": "Felhasználónév nem tartalmazhat szóközt",
+        "emailRequired": "Email cím megadása kötelező",
+        "emailInvalid": "Kérjük, adjon meg érvényes email címet",
+        "passwordRequired": "Jelszó megadása kötelező",
+        "passwordLength": "Jelszó legalább 8 karakter hosszú kell legyen",
+        "passwordUppercase": "Jelszó legalább egy nagybetűt kell tartalmazzon",
+        "passwordLowercase": "Jelszó legalább egy kisbetűt kell tartalmazzon",
+        "passwordNumber": "Jelszó legalább egy számot kell tartalmazzon",
+        "passwordMatch": "Jelszavak nem egyeznek",
+        "roomNumberRequired": "Szobaszám megadása kötelező",
+        "roomNumberFormat": "Szobaszám csak számokat tartalmazhat",
+        "phoneNumberFormat": "Kérjük, adjon meg érvényes telefonszámot"
+      },
+      "passwordStrength": {
+        "label": "Jelszó erőssége",
+        "weak": "Gyenge",
+        "medium": "Közepes",
+        "strong": "Erős",
+        "requirementsTitle": "Követelmények",
+        "requirements": {
+          "minLength": "Legalább 8 karakter",
+          "uppercase": "Legalább egy nagybetű",
+          "lowercase": "Legalább egy kisbetű",
+          "number": "Legalább egy szám"
+        }
+      }
+    },
+    "verification": {
+      "title": "Email cím megerősítése",
+      "subtitle": "6 számjegyű kódot küldtünk az email címére",
+      "code": "Megerősítő kód",
+      "codePlaceholder": "Adja meg a 6 számjegyű kódot",
+      "submit": "Email megerősítése",
+      "resend": "Kód újraküldése",
+      "resendSuccess": "Megerősítő kód elküldve!",
+      "success": "Email cím sikeresen megerősítve!",
+      "error": "Érvénytelen vagy lejárt kód. Kérjük, próbálja újra.",
+      "expired": "Megerősítő kód lejárt. Kérjük, kérjen újat."
+    },
+    "forgotPassword": {
+      "title": "Jelszó visszaállítása",
+      "subtitle": "Adja meg email címét a jelszó visszaállító link fogadásához",
+      "email": "Email cím",
+      "emailPlaceholder": "Adja meg email címét",
+      "submit": "Link küldése",
+      "backToLogin": "Vissza a bejelentkezéshez",
+      "success": "Jelszó visszaállító link elküldve! Ellenőrizze email fiókját.",
+      "error": "Link küldése sikertelen. Kérjük, próbálja újra."
+    },
+    "resetPassword": {
+      "title": "Új jelszó létrehozása",
+      "subtitle": "Adja meg új jelszavát",
+      "password": "Új jelszó",
+      "passwordPlaceholder": "Adja meg új jelszavát",
+      "confirmPassword": "Új jelszó megerősítése",
+      "confirmPasswordPlaceholder": "Erősítse meg új jelszavát",
+      "submit": "Jelszó visszaállítása",
+      "success": "Jelszó sikeresen visszaállítva! Most már bejelentkezhet.",
+      "error": "Jelszó visszaállítása sikertelen. Kérjük, próbálja újra.",
+      "tokenExpired": "Visszaállító link lejárt. Kérjük, kérjen újat."
+    }
+  },
+  "dashboard": {
+    "title": "Irányítópult",
+    "welcome": "Üdvözöljük újra, {name}!",
+    "overview": "Áttekintés",
+    "machines": "Gépek",
+    "schedule": "Ütemezés",
+    "history": "Előzmények",
+    "notifications": "Értesítések"
+  },
+  "machines": {
+    "title": "Gépek",
+    "available": "Elérhető",
+    "inUse": "Használatban",
+    "maintenance": "Karbantartás",
+    "washers": "Mosógépek",
+    "dryers": "Szárítók",
+    "reserve": "Foglalás",
+    "cancel": "Foglalás törlése",
+    "status": {
+      "available": "Elérhető",
+      "inUse": "Használatban",
+      "reserved": "Foglalt",
+      "maintenance": "Karbantartás",
+      "offline": "Offline"
+    }
+  },
+  "notifications": {
+    "title": "Értesítések",
+    "markAllRead": "Összes olvasottnak jelölése",
+    "noNotifications": "Nincsenek értesítések",
+    "types": {
+      "machineAvailable": "Gép elérhető",
+      "cycleComplete": "Ciklus befejezve",
+      "reservationReminder": "Foglalás emlékeztető",
+      "maintenance": "Karbantartási értesítés"
+    }
+  },
+  "errors": {
+    "generic": "Valami hiba történt. Kérjük, próbálja újra.",
+    "network": "Hálózati hiba. Kérjük, ellenőrizze internetkapcsolatát.",
+    "unauthorized": "Nincs jogosultsága ehhez a művelethez.",
+    "notFound": "A kért erőforrás nem található.",
+    "serverError": "Szerverhiba. Kérjük, próbálja újra később."
+  }
+}
+

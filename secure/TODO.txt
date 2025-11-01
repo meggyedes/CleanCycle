@@ -1,0 +1,132 @@
+1. rész:
+Projekt átdolgozása – UI és funkciók fejlesztése
+
+A projekt jelenlegi felépítését, különösen a felhasználói felületet (UI), szükséges átsrukturálni, mivel jelenleg nem működik megfelelően. Az alábbi feladatokat kell elvégezni:
+- Landing page
+    - Maradhat az alap koncepció, mivel jelenleg vizuálisan elfogadható állapotban van.
+    - A feature szekció tartalma azonban nem releváns, ezért frissíteni kell valós, a termékre jellemző információkkal.
+    - Biztosítani kell, hogy az oldal általános szerkezete reszponzív és modern legyen.
+    - Nyelvváltási lehetőség
+    - A fejlécben / navigációs sávban helyezz el egy nyelvváltó gombot vagy legördülő menüt. Az oldal alapértelmezett nyelve angol legyen.
+    - A felhasználók a következő nyelvek között tudjanak váltani:
+        - Angol 🇬🇧 (default)
+        - Magyar 🇭🇺
+        - Holland 🇳🇱
+        - Német 🇩🇪
+        - Francia 🇫🇷
+        - Olasz 🇮🇹
+        - Belga 🇧🇪
+        - Bulgár 🇧🇬
+        - Szlovák 🇸🇰
+
+
+2. rész:
+- Kell egy oldal, amin be lehet jelentkezni a rendszerbe. Ezen az oldalon legyen középen egy "Form" ahol a következő adatok kerülnek megadásra:
+    - email cím / felhasználónév,
+    - jelszó
+
+- Ha a felhasználó még nem regisztrált, akkor a form alján legyen egy "Ha még nem regisztráltál, akkor itt tudsz" / "Regisztrálj most!" gomb, amire kattintva megjelenik egy új oldal, ahol a következő adatok kerülnek megadásra:
+    - Vezetéknév (validálás: kötelező, csak betűk)
+    - Keresztnév (validálás: kötelező, csak betűk)
+    - felhasználónév (validálás: kötelező, csak betűk és számok, nem tartalmazhat szóközt)
+    - Email cím (validálás: kötelező, email formátum)
+    - Jelszó (validálás: kötelező, legalább 8 karakter, kis és nagy betű, szám) Ez legyen vizuálisan mutatva dinamikusan, hogy melyik az, ami még hiányzik, vagy még mi az aminek nem felel meg a jelszava a usernek. Fontos hogy erős titkosítást alkalmzz, nehezen lehessen feltörni adathalászok vagy hekkerek számára. 
+    - Szobaszám (validálás: kötelező, szám) Mindegyik szoba úgy néz ki, hogy K136, K101, stb. tehát a "K" előtag után számok vannak. A "K" előtagot nem kell kitölteni, csak a számot. Valahogyan jó lenne ha fixre lehetne rögzíteni a "K"-t előtte, hogy csak a számot kellene megadni. 
+    - Telefonszám (validálás: nem kötelező, szám) valószínűleg lesz aki +36-ot is megad, valószínűleg lesz aki 06-ot is megad, valószínűleg lesz aki 06-ot sem ad meg, valószínűleg lesz aki +36-ot sem ad meg. Fontos, hogy mindegyik esetet lehessen kezelni. 
+
+
+3. rész:
+- Amikor a felhasználó regisztrál, a rendszer automatikusan küldjön egy megerősítő e-mailt a megadott e-mail-címre.
+- Az e-mail tartalmazzon egy 6 számjegyű ellenőrző kódot, amelyet a felhasználónak meg kell adnia a regisztráció véglegesítéséhez.
+- A regisztrációs űrlap elküldése után a felhasználót irányítsa át egy „E-mail megerősítése” (vagy hasonló nevű) oldalra, ahol lehetősége van megadni a kapott kódot a fiók aktiválásához.
+- Az e-mail küldéséhez a rendszer a Google által biztosított „alkalmazásjelszó” módszert fogja használni, amely biztonságos és hitelesített kapcsolatot biztosít az e-mail küldéséhez.
+
+
+4. rész: 
+- Kell egy "Forgot Password" funkcionalitás és felület is, ami ha a felhasználó elfelejtette a jelszavát, akkor megadhassa az email címét, és kapjon egy emailt, ami tartalmazza a jelszó visszaállításához szükséges linket. 
+- Amikor a felhasználó bejelentkezik, akkor legyen egy "Emlékezz rám" checkbox, ami ha be van pipálva, akkor a következő alkalommal nem kell bejelentkezni. 
+
+5. rész: 
+## 🧺 Alap funkciók (amiket már említettél)
+
+**Mosó- és szárítógépek listája**
+* Gép sorszáma / azonosítója
+* Állapot: *Elérhető*, *Használatban*, *Foglalt (előjegyezve)*, *Karbantartás alatt*
+* Esetleg egy **vizuális jelzés** (színes ikon vagy lámpa) az állapothoz
+
+**Statisztikai oldal**
+* Saját használati előzmények (mikor, melyik gépet használta, mennyi ideig, mennyibe került stb.)
+* Napi / heti / havi statisztika
+* Összes mosás, összes költség, időbeli trendek
+
+**Logolás**
+* Automatikus naplózás: géphasználat, kezdés / befejezés időpontja, hibaesetek
+
+
+### 🔐 Felhasználói profil
+* Saját adatok
+* Beállítások (értesítések, nyelv stb.)
+
+### 🕒 Foglalási rendszer
+* Lehetővé teszi, hogy előre lefoglaljon egy gépet adott időpontra
+* Mutatja, mikor lesz szabad egy adott mosógép / szárító
+* Lehet naptár nézet vagy idővonal (timeline)
+* Értesítés, ha a foglalás hamarosan indul / lejár
+
+### 💬 Értesítések / Notifikációk
+* „A mosásod 5 perc múlva véget ér”
+* „A lefoglalt mosógéped most szabad”
+* „A gép hibát észlelt, karbantartás alatt van”
+
+Ezt meg lehet csinálni e-mailben, push notificationként, vagy csak az appban.
+
+### 💰 Fizetés / Egyenleg kezelés
+
+* Egyenleg feltöltése (pl. kártyával, mobilon)
+* Árkalkuláció: mennyibe kerül a mosás / szárítás
+* Költségstatisztika
+* Blokkok / tranzakciós előzmények
+
+### 🧼 Gép részletes nézete
+
+* Gép típus, kapacitás, ciklus hossza
+* Aktuális felhasználó (ha megengedett)
+* Hibakód vagy hibaüzenet kijelzése
+* Mosás hátralévő ideje (pl. “Hátralévő idő: 12 perc”)
+
+### ⚙️ Admin / karbantartói nézet (ha később szeretnéd bővíteni)
+
+* Új gépek hozzáadása / eltávolítása
+* Karbantartási napló
+* Gép kihasználtsági statisztika
+* Hibajelentések kezelése
+
+---
+
+## 💡 Extra UX / UI ötletek
+
+* **Dashboard** a kezdőlapon:
+
+  * Összegzés: hány gép szabad, hány foglalt
+  * Saját legutóbbi mosás
+  * Rövid statisztikai kártyák (pl. “Ebben a hónapban 12 mosás”)
+* **Géptérkép** vagy vizuális elrendezés (pl. ha több mosoda van → kattintható térkép / alaprajz)
+* **Dark mode / light mode**
+
+---
+
+## 🔧 Technikai szempontból
+
+Ha React-ben csinálod a frontendet:
+
+* Komponensek:
+
+  * `MachineList` – gépek állapota
+  * `MachineCard` – egy-egy gép részletes adatai
+  * `StatsDashboard` – statisztikai kártyák, grafikonok (pl. Recharts)
+  * `ReservationCalendar` – időpontfoglalás
+  * `UserProfile` – felhasználói adatok
+* API: PHP (Laravel, Symfony, vagy Slim) backendről jöhetnek az adatok JSON-ban
+
+
+

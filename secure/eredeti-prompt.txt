@@ -1,0 +1,190 @@
+🧺 Mosószoba Management Rendszer
+
+Powered by Daniel Soos 2025
+
+1. Cél és összefoglaló
+
+A rendszer célja egy társasházi mosószoba foglalási és nyomonkövető alkalmazás létrehozása, amely segítségével a lakók valós időben láthatják, melyik mosógép vagy szárítógép szabad, használatban van, illetve mikor szabadul fel.
+
+A megoldás reszponzív webalkalmazásként és Electron alapú asztali alkalmazásként is elérhető lesz.
+A rendszer támogatja a Google-fiókkal történő bejelentkezést, emlékeztető e-maileket, valamint adminisztrációs felületet a gépek és felhasználók kezelésére.
+
+2. Fő funkciók
+🧍‍♂️ Felhasználói funkciók
+
+Bejelentkezés Google-fiókkal (Supabase Auth)
+
+Mosó- és szárítógép állapotok megtekintése valós időben
+(szabad / foglalt / fut / karbantartás)
+
+Mosás / szárítás indítása (időtartam megadása)
+
+Foglalás jövőbeli időpontra (időslot foglalási rendszer)
+
+Emlékeztető e-mail 10 perccel lejárat előtt
+
+Értesítés, ha lejárt a gép vagy “ruhát bennhagyták” bejelentés
+
+Saját előzmények megtekintése (mikor, melyik gépet használta)
+
+Mobilbarát felület (PWA) – egyszerű ikonokkal és színkódokkal
+
+🧑‍💼 Admin / gondnok funkciók
+
+Admin bejelentkezés és jogosultsági szintek:
+
+Admin (minden funkció)
+
+Gondnok (csak állapotkezelés)
+
+Gépek kezelése:
+
+Új gép hozzáadása, típus (mosó / szárító)
+
+Állapot kézi módosítása
+
+Karbantartási mód beállítása
+
+Szobák kezelése (kis / nagy mosószoba)
+
+Felhasználók és logok megtekintése
+
+Részletes naplózás (audit trail minden műveletről)
+
+📧 Automatikus értesítések
+
+Lejárat előtti figyelmeztető e-mail (pl. 10 perccel a vége előtt)
+
+Mosás / szárítás befejezéséről e-mail
+
+“Ruhát bennhagyták” jelzés esetén automatikus emlékeztető
+
+Admin értesítés hibás vagy karbantartásba tett gépekről
+
+3. Architektúra áttekintés
+🧩 Felépítés
+Komponens	Technológia	Funkció
+Frontend (web)	React + Vite / Next.js + Tailwind CSS	Felhasználói és admin UI
+Mobil támogatás	PWA (Progressive Web App)	Telefonról is használható
+Desktop app	Electron WebView	Webapp csomagolva desktopra
+Backend / adatbázis	Supabase (PostgreSQL alap)	Auth, DB, Realtime, Edge Functions
+Valós idejű frissítés	Supabase Realtime API	Gépállapotok azonnali szinkronja
+E-mail küldés	Supabase Edge Function + Resend API	Automatikus emlékeztetők
+Hosting	Supabase (backend) + Vercel / Netlify (frontend)	Gyors és stabil
+🔐 Hitelesítés és jogosultságok
+
+A bejelentkezés a Supabase Auth modulon keresztül történik.
+
+Szint	Leírás	Jogosultság
+User	normál lakó	Saját foglalás, saját értesítés
+Gondnok	karbantartó / házmester	Gépállapot kézi módosítása
+Admin	rendszergazda	Teljes hozzáférés, felhasználók, logok, konfiguráció
+
+Az adatbiztonságot Row Level Security (RLS) szabályok garantálják a Supabase-en belül:
+
+a user csak a saját session-jeit láthatja,
+
+admin bypassolja a policy-kat.
+
+4. Adatmodell (Supabase táblák)
+🧾 users
+oszlop	típus	leírás
+id	uuid	Supabase Auth user ID
+email	text	felhasználó e-mail címe
+name	text	megjelenített név
+role	enum(user, manager, admin)	jogosultság
+created_at	timestamp	regisztráció dátuma
+🧱 rooms
+oszlop	típus	leírás
+id	serial	szoba ID
+name	text	pl. “Kis mosószoba”
+description	text	opcionális
+created_at	timestamp	létrehozás ideje
+⚙️ machines
+oszlop	típus	leírás
+id	serial	gépazonosító
+room_id	int (FK rooms.id)	melyik szobában van
+name	text	pl. “Mosó 1”
+type	enum(washer, dryer)	géptípus
+status	enum(free, running, booked, maintenance, broken)	állapot
+default_duration	int	percben
+created_at	timestamp	létrehozás ideje
+⏱️ sessions
+oszlop	típus	leírás
+id	serial	session ID
+user_id	uuid (FK users.id)	ki használja
+machine_id	int (FK machines.id)	melyik gép
+start_time	timestamp	kezdés ideje
+end_time	timestamp	várható befejezés
+actual_end	timestamp	tényleges vége
+status	enum(active, finished, cancelled)	állapot
+created_at	timestamp	létrehozás ideje
+🔔 notifications
+oszlop	típus	leírás
+id	serial	azonosító
+user_id	uuid	értesített user
+type	enum(reminder, expired, forgotten, system)	értesítés típusa
+message	text	szöveg
+sent_at	timestamp	mikor lett elküldve
+📜 logs
+oszlop	típus	leírás
+id	serial	log ID
+user_id	uuid	ki végezte a műveletet
+machine_id	int	melyik gépet érintette
+action	text	pl. "status_changed", "manual_override"
+timestamp	timestamp	időbélyeg
+details	jsonb	extra infó (előző / új státusz stb.)
+5. Felhasználói élmény (UX/UI)
+
+Dashboard nézet: minden gép kártyája színkódolt (zöld = szabad, piros = fut, sárga = foglalt, szürke = karbantartás)
+
+Indítás gomb: mosás / szárítás kezdése, idő kiválasztással
+
+Visszaszámláló: “Még 12 perc hátra”
+
+Értesítési csengő: in-app notification vagy email ikon
+
+Admin felület: külön menü (gépek, logok, felhasználók)
+
+6. Realtime működés
+
+A valós idejű frissítés a Supabase Realtime szolgáltatásával történik.
+Minden gép (machines tábla) változása automatikusan frissül a frontend felületen.
+
+const channel = supabase
+  .channel('machines')
+  .on('postgres_changes', { event: '*', schema: 'public', table: 'machines' }, payload => {
+    updateMachineState(payload.new)
+  })
+  .subscribe()
+
+7. Email emlékeztető logika (Edge Function)
+
+Az e-mail értesítéseket a Supabase Edge Functions kezelik, időzítve (cron) vagy eseményvezérelten:
+
+sessions táblában figyelés: ha end_time - now() = 10 perc → “lejáró” értesítés
+
+ha now() > end_time és status = active → “lejárt” e-mail
+
+ha valaki “bennhagyta” → admin trigger
+
+SMTP integráció: Gmail App Password vagy külső API (pl. Resend).
+
+8. Fejlesztési roadmap
+Fázis	Feladat	Állapot
+1.	Projekt setup (Next.js + Supabase)	🔄
+2.	Auth (Google login)	⏳
+3.	Adatbázis séma + RLS policy	⏳
+4.	Gépkezelő UI (felhasználói oldal)	⏳
+5.	Admin panel	⏳
+6.	Email emlékeztető funkció	⏳
+7.	Realtime integráció	⏳
+8.	Electron csomagolás	⏳
+9.	Tesztelés + branding (“Powered by Daniel Soos 2025”)	⏳
+9. Összegzés
+
+A Mosószoba Management System egy modern, valós idejű, felhőalapú webes és mobilbarát alkalmazás, amely Supabase-re épül, és lehetővé teszi a társasház lakói számára, hogy átláthatóan kezeljék a mosási / szárítási időpontokat, valamint automatizált emlékeztetőket kapjanak.
+Az adminisztrátorok számára pedig egyszerűen kezelhető, biztonságos és naplózott felületet biztosít.
+
+Powered by Daniel Soos 2025 🚀
+Fejlesztési alap: React + Supabase + Tailwind + Electron

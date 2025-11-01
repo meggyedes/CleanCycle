@@ -1,0 +1,222 @@
+{
+  "common": {
+    "appName": "CleanCycle",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "submit": "Soumettre",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "reset": "Réinitialiser",
+    "logout": "Déconnexion",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "help": "Aide",
+    "about": "À propos"
+  },
+  "landing": {
+    "title": "CleanCycle",
+    "subtitle": "Système de gestion de blanchisserie intelligent",
+    "description": "Gérez votre blanchisserie efficacement avec le suivi des machines en temps réel, la planification intelligente et les notifications automatisées.",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus",
+    "features": {
+      "title": "Fonctionnalités",
+      "subtitle": "Tout ce dont vous avez besoin pour une gestion efficace de la blanchisserie",
+      "realtime": {
+        "title": "Suivi en temps réel",
+        "description": "Surveillez la disponibilité et l'état des machines en temps réel. Sachez exactement quand les machines sont libres."
+      },
+      "scheduling": {
+        "title": "Planification intelligente",
+        "description": "Réservez des machines à l'avance et recevez une notification lorsque votre créneau est prêt."
+      },
+      "notifications": {
+        "title": "Notifications instantanées",
+        "description": "Recevez des notifications lorsque votre linge est prêt ou lorsque des machines deviennent disponibles."
+      },
+      "analytics": {
+        "title": "Analyse d'utilisation",
+        "description": "Suivez vos habitudes de lavage et optimisez votre planning de lavage."
+      },
+      "multiRoom": {
+        "title": "Plusieurs salles",
+        "description": "Gérez plusieurs buanderies avec différentes machines et horaires."
+      },
+      "secure": {
+        "title": "Sécurisé et privé",
+        "description": "Vos données sont cryptées et sécurisées. Nous respectons votre vie privée."
+      }
+    },
+    "cta": {
+      "title": "Prêt à commencer?",
+      "description": "Rejoignez CleanCycle aujourd'hui et facilitez la gestion de votre blanchisserie.",
+      "button": "S'inscrire maintenant"
+    }
+  },
+  "auth": {
+    "backToHome": "Retour",
+    "login": {
+      "title": "Se connecter",
+      "subtitle": "Bienvenue sur CleanCycle",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "username": "Nom d'utilisateur",
+      "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "rememberMe": "Se souvenir de moi",
+      "forgotPassword": "Mot de passe oublié?",
+      "submit": "Se connecter",
+      "noAccount": "Pas encore de compte?",
+      "signUp": "Inscrivez-vous maintenant!",
+      "success": "Connexion réussie!",
+      "error": "Identifiants invalides. Veuillez réessayer."
+    },
+    "register": {
+      "title": "Créer un compte",
+      "subtitle": "Rejoignez CleanCycle aujourd'hui",
+      "firstName": "Prénom",
+      "firstNamePlaceholder": "Entrez votre prénom",
+      "lastName": "Nom",
+      "lastNamePlaceholder": "Entrez votre nom",
+      "username": "Nom d'utilisateur",
+      "usernamePlaceholder": "Choisissez un nom d'utilisateur",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Créez un mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+      "roomNumber": "Numéro de chambre",
+      "roomNumberPlaceholder": "Entrez le numéro de chambre (ex: 136)",
+      "phoneNumber": "Numéro de téléphone (optionnel)",
+      "phoneNumberPlaceholder": "Entrez votre numéro de téléphone",
+      "submit": "Créer un compte",
+      "hasAccount": "Vous avez déjà un compte?",
+      "signIn": "Se connecter",
+      "success": "Compte créé avec succès! Veuillez vérifier votre e-mail.",
+      "error": "Échec de l'inscription. Veuillez réessayer.",
+      "validation": {
+        "firstNameRequired": "Le prénom est requis",
+        "firstNameLetters": "Le prénom ne peut contenir que des lettres",
+        "lastNameRequired": "Le nom est requis",
+        "lastNameLetters": "Le nom ne peut contenir que des lettres",
+        "usernameRequired": "Le nom d'utilisateur est requis",
+        "usernameFormat": "Le nom d'utilisateur ne peut contenir que des lettres, chiffres et underscores",
+        "usernameNoSpaces": "Le nom d'utilisateur ne peut pas contenir d'espaces",
+        "emailRequired": "L'adresse e-mail est requise",
+        "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+        "passwordRequired": "Le mot de passe est requis",
+        "passwordLength": "Le mot de passe doit contenir au moins 8 caractères",
+        "passwordUppercase": "Le mot de passe doit contenir au moins une majuscule",
+        "passwordLowercase": "Le mot de passe doit contenir au moins une minuscule",
+        "passwordNumber": "Le mot de passe doit contenir au moins un chiffre",
+        "passwordMatch": "Les mots de passe ne correspondent pas",
+        "roomNumberRequired": "Le numéro de chambre est requis",
+        "roomNumberFormat": "Le numéro de chambre ne peut contenir que des chiffres",
+        "phoneNumberFormat": "Veuillez entrer un numéro de téléphone valide"
+      },
+      "passwordStrength": {
+        "label": "Force du mot de passe",
+        "weak": "Faible",
+        "medium": "Moyen",
+        "strong": "Fort",
+        "requirementsTitle": "Exigences",
+        "requirements": {
+          "minLength": "Au moins 8 caractères",
+          "uppercase": "Au moins une majuscule",
+          "lowercase": "Au moins une minuscule",
+          "number": "Au moins un chiffre"
+        }
+      }
+    },
+    "verification": {
+      "title": "Vérifiez votre e-mail",
+      "subtitle": "Nous avons envoyé un code à 6 chiffres à votre e-mail",
+      "code": "Code de vérification",
+      "codePlaceholder": "Entrez le code à 6 chiffres",
+      "submit": "Vérifier l'e-mail",
+      "resend": "Renvoyer le code",
+      "resendSuccess": "Code de vérification envoyé!",
+      "success": "E-mail vérifié avec succès!",
+      "error": "Code invalide ou expiré. Veuillez réessayer.",
+      "expired": "Le code de vérification a expiré. Veuillez en demander un nouveau."
+    },
+    "forgotPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "subtitle": "Entrez votre e-mail pour recevoir un lien de réinitialisation",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "submit": "Envoyer le lien",
+      "backToLogin": "Retour à la connexion",
+      "success": "Lien de réinitialisation envoyé! Vérifiez votre e-mail.",
+      "error": "Échec de l'envoi du lien. Veuillez réessayer."
+    },
+    "resetPassword": {
+      "title": "Créer un nouveau mot de passe",
+      "subtitle": "Entrez votre nouveau mot de passe",
+      "password": "Nouveau mot de passe",
+      "passwordPlaceholder": "Entrez le nouveau mot de passe",
+      "confirmPassword": "Confirmer le nouveau mot de passe",
+      "confirmPasswordPlaceholder": "Confirmez le nouveau mot de passe",
+      "submit": "Réinitialiser le mot de passe",
+      "success": "Mot de passe réinitialisé avec succès! Vous pouvez maintenant vous connecter.",
+      "error": "Échec de la réinitialisation. Veuillez réessayer.",
+      "tokenExpired": "Le lien a expiré. Veuillez en demander un nouveau."
+    }
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bienvenue, {name}!",
+    "overview": "Aperçu",
+    "machines": "Machines",
+    "schedule": "Planning",
+    "history": "Historique",
+    "notifications": "Notifications"
+  },
+  "machines": {
+    "title": "Machines",
+    "available": "Disponible",
+    "inUse": "En cours d'utilisation",
+    "maintenance": "Maintenance",
+    "washers": "Lave-linge",
+    "dryers": "Sèche-linge",
+    "reserve": "Réserver",
+    "cancel": "Annuler la réservation",
+    "status": {
+      "available": "Disponible",
+      "inUse": "En cours d'utilisation",
+      "reserved": "Réservé",
+      "maintenance": "Maintenance",
+      "offline": "Hors ligne"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Tout marquer comme lu",
+    "noNotifications": "Aucune notification",
+    "types": {
+      "machineAvailable": "Machine disponible",
+      "cycleComplete": "Cycle terminé",
+      "reservationReminder": "Rappel de réservation",
+      "maintenance": "Avis de maintenance"
+    }
+  },
+  "errors": {
+    "generic": "Une erreur s'est produite. Veuillez réessayer.",
+    "network": "Erreur réseau. Vérifiez votre connexion.",
+    "unauthorized": "Vous n'êtes pas autorisé à effectuer cette action.",
+    "notFound": "La ressource demandée n'a pas été trouvée.",
+    "serverError": "Erreur serveur. Veuillez réessayer plus tard."
+  }
+}
+

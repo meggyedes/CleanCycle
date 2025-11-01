@@ -1,0 +1,231 @@
+{
+  "common": {
+    "appName": "CleanCycle",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "reset": "Reset",
+    "logout": "Logout",
+    "profile": "Profile",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About"
+  },
+  "landing": {
+    "title": "CleanCycle",
+    "subtitle": "Smart Laundry Management System",
+    "description": "Manage your laundry room efficiently with real-time machine tracking, smart scheduling, and automated notifications.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "features": {
+      "title": "Features",
+      "subtitle": "Everything you need for efficient laundry management",
+      "realtime": {
+        "title": "Real-time Tracking",
+        "description": "Monitor machine availability and status in real-time. Know exactly when machines are free."
+      },
+      "scheduling": {
+        "title": "Smart Scheduling",
+        "description": "Reserve machines in advance and get notified when your time slot is ready."
+      },
+      "notifications": {
+        "title": "Instant Notifications",
+        "description": "Receive notifications when your laundry is done or when machines become available."
+      },
+      "analytics": {
+        "title": "Usage Analytics",
+        "description": "Track your laundry patterns and optimize your washing schedule."
+      },
+      "multiRoom": {
+        "title": "Multiple Rooms",
+        "description": "Manage multiple laundry rooms with different machines and schedules."
+      },
+      "secure": {
+        "title": "Secure & Private",
+        "description": "Your data is encrypted and secure. We respect your privacy."
+      }
+    },
+    "cta": {
+      "title": "Ready to get started?",
+      "description": "Join CleanCycle today and make laundry management effortless.",
+      "button": "Sign Up Now"
+    }
+  },
+  "auth": {
+    "backToHome": "Back",
+    "backToLogin": "Back to login",
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Welcome back to CleanCycle",
+      "email": "Email address",
+      "emailPlaceholder": "Enter your email",
+      "username": "Username",
+      "usernamePlaceholder": "Enter your username",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up now!",
+      "success": "Successfully signed in!",
+      "error": "Invalid credentials. Please try again.",
+      "emailNotConfirmed": "Please verify your email first. Redirecting to verification page..."
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Join CleanCycle today",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "username": "Username",
+      "usernamePlaceholder": "Choose a username",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Create a password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "roomNumber": "Room Number",
+      "roomNumberPlaceholder": "Enter room number (e.g., 136)",
+      "phoneNumber": "Phone Number (optional)",
+      "phoneNumberPlaceholder": "Enter your phone number",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "success": "Account created successfully! Please verify your email.",
+      "error": "Registration failed. Please try again.",
+      "validation": {
+        "firstNameRequired": "First name is required",
+        "firstNameLetters": "First name can only contain letters",
+        "lastNameRequired": "Last name is required",
+        "lastNameLetters": "Last name can only contain letters",
+        "usernameRequired": "Username is required",
+        "usernameFormat": "Username can only contain letters, numbers, and underscores",
+        "usernameNoSpaces": "Username cannot contain spaces",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address",
+        "passwordRequired": "Password is required",
+        "passwordLength": "Password must be at least 8 characters",
+        "passwordUppercase": "Password must contain at least one uppercase letter",
+        "passwordLowercase": "Password must contain at least one lowercase letter",
+        "passwordNumber": "Password must contain at least one number",
+        "passwordMatch": "Passwords do not match",
+        "roomNumberRequired": "Room number is required",
+        "roomNumberFormat": "Room number must contain only numbers",
+        "phoneNumberFormat": "Please enter a valid phone number"
+      },
+      "passwordStrength": {
+        "label": "Password strength",
+        "weak": "Weak",
+        "medium": "Medium",
+        "strong": "Strong",
+        "requirementsTitle": "Requirements",
+        "requirements": {
+          "minLength": "At least 8 characters",
+          "uppercase": "At least one uppercase letter",
+          "lowercase": "At least one lowercase letter",
+          "number": "At least one number"
+        }
+      }
+    },
+    "verification": {
+      "title": "Verify Your Email",
+      "subtitle": "We've sent a 6-digit code to your email",
+      "sentTo": "Code sent to:",
+      "codeLabel": "Verification Code",
+      "codePlaceholder": "000000",
+      "codeHint": "Enter the 6-digit code from your email",
+      "verify": "Verify Email",
+      "verifying": "Verifying",
+      "noCode": "Didn't receive the code?",
+      "resend": "Resend Code",
+      "resending": "Sending...",
+      "resendSuccess": "New verification code sent to your email!",
+      "resendError": "Failed to resend code. Please try again.",
+      "success": "Email verified successfully! Redirecting to login...",
+      "error": "Verification failed. Please try again.",
+      "invalidCode": "Please enter a valid 6-digit code",
+      "expired": "Verification code has expired. Please request a new one."
+    },
+    "forgotPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your email to receive a password reset link",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email",
+      "submit": "Send Reset Link",
+      "backToLogin": "Back to login",
+      "success": "Password reset link sent! Check your email.",
+      "error": "Failed to send reset link. Please try again."
+    },
+    "resetPassword": {
+      "title": "Create New Password",
+      "subtitle": "Enter your new password",
+      "password": "New Password",
+      "passwordPlaceholder": "Enter new password",
+      "confirmPassword": "Confirm New Password",
+      "confirmPasswordPlaceholder": "Confirm new password",
+      "submit": "Reset Password",
+      "success": "Password reset successfully! You can now sign in.",
+      "error": "Failed to reset password. Please try again.",
+      "tokenExpired": "Reset link has expired. Please request a new one."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}!",
+    "overview": "Overview",
+    "machines": "Machines",
+    "schedule": "Schedule",
+    "history": "History",
+    "notifications": "Notifications"
+  },
+  "machines": {
+    "title": "Machines",
+    "available": "Available",
+    "inUse": "In Use",
+    "maintenance": "Maintenance",
+    "washers": "Washers",
+    "dryers": "Dryers",
+    "reserve": "Reserve",
+    "cancel": "Cancel Reservation",
+    "status": {
+      "available": "Available",
+      "inUse": "In Use",
+      "reserved": "Reserved",
+      "maintenance": "Maintenance",
+      "offline": "Offline"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "noNotifications": "No notifications",
+    "types": {
+      "machineAvailable": "Machine Available",
+      "cycleComplete": "Cycle Complete",
+      "reservationReminder": "Reservation Reminder",
+      "maintenance": "Maintenance Notice"
+    }
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "unauthorized": "You are not authorized to perform this action.",
+    "notFound": "The requested resource was not found.",
+    "serverError": "Server error. Please try again later."
+  }
+}
+

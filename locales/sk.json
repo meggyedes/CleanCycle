@@ -1,0 +1,222 @@
+{
+  "common": {
+    "appName": "CleanCycle",
+    "loading": "Načítava sa...",
+    "error": "Chyba",
+    "success": "Úspech",
+    "cancel": "Zrušiť",
+    "confirm": "Potvrdiť",
+    "save": "Uložiť",
+    "delete": "Vymazať",
+    "edit": "Upraviť",
+    "close": "Zavrieť",
+    "back": "Späť",
+    "next": "Ďalej",
+    "submit": "Odoslať",
+    "search": "Hľadať",
+    "filter": "Filtrovať",
+    "reset": "Obnoviť",
+    "logout": "Odhlásiť sa",
+    "profile": "Profil",
+    "settings": "Nastavenia",
+    "help": "Pomoc",
+    "about": "O aplikácii"
+  },
+  "landing": {
+    "title": "CleanCycle",
+    "subtitle": "Inteligentný systém správy práčovne",
+    "description": "Spravujte svoju práčovňu efektívne so sledovaním strojov v reálnom čase, inteligentným plánovaním a automatickými upozorneniami.",
+    "getStarted": "Začať",
+    "learnMore": "Dozvedieť sa viac",
+    "features": {
+      "title": "Funkcie",
+      "subtitle": "Všetko, čo potrebujete pre efektívnu správu práčovne",
+      "realtime": {
+        "title": "Sledovanie v reálnom čase",
+        "description": "Monitorujte dostupnosť a stav strojov v reálnom čase. Vedzte presne, kedy sú stroje voľné."
+      },
+      "scheduling": {
+        "title": "Inteligentné plánovanie",
+        "description": "Rezervujte si stroje vopred a dostanete upozornenie, keď je váš čas pripravený."
+      },
+      "notifications": {
+        "title": "Okamžité upozornenia",
+        "description": "Dostávajte upozornenia, keď je vaše prádlo hotové alebo keď sa stroje uvoľnia."
+      },
+      "analytics": {
+        "title": "Analýza používania",
+        "description": "Sledujte svoje vzory prania a optimalizujte svoj rozvrh prania."
+      },
+      "multiRoom": {
+        "title": "Viacero miestností",
+        "description": "Spravujte viacero práčovní s rôznymi strojmi a rozvrhmi."
+      },
+      "secure": {
+        "title": "Bezpečné a súkromné",
+        "description": "Vaše údaje sú šifrované a bezpečné. Rešpektujeme vaše súkromie."
+      }
+    },
+    "cta": {
+      "title": "Pripravení začať?",
+      "description": "Pripojte sa k CleanCycle ešte dnes a urobte správu práčovne bezproblémovou.",
+      "button": "Zaregistrovať sa teraz"
+    }
+  },
+  "auth": {
+    "backToHome": "Späť",
+    "login": {
+      "title": "Prihlásiť sa",
+      "subtitle": "Vitajte späť v CleanCycle",
+      "email": "Emailová adresa",
+      "emailPlaceholder": "Zadajte svoj email",
+      "username": "Používateľské meno",
+      "usernamePlaceholder": "Zadajte svoje používateľské meno",
+      "password": "Heslo",
+      "passwordPlaceholder": "Zadajte svoje heslo",
+      "rememberMe": "Zapamätať si ma",
+      "forgotPassword": "Zabudnuté heslo?",
+      "submit": "Prihlásiť sa",
+      "noAccount": "Nemáte účet?",
+      "signUp": "Zaregistrujte sa teraz!",
+      "success": "Úspešne prihlásený!",
+      "error": "Neplatné prihlasovacie údaje. Skúste to znova."
+    },
+    "register": {
+      "title": "Vytvoriť účet",
+      "subtitle": "Pripojte sa k CleanCycle ešte dnes",
+      "firstName": "Meno",
+      "firstNamePlaceholder": "Zadajte svoje meno",
+      "lastName": "Priezvisko",
+      "lastNamePlaceholder": "Zadajte svoje priezvisko",
+      "username": "Používateľské meno",
+      "usernamePlaceholder": "Vyberte si používateľské meno",
+      "email": "Emailová adresa",
+      "emailPlaceholder": "Zadajte svoj email",
+      "password": "Heslo",
+      "passwordPlaceholder": "Vytvorte heslo",
+      "confirmPassword": "Potvrdiť heslo",
+      "confirmPasswordPlaceholder": "Potvrďte svoje heslo",
+      "roomNumber": "Číslo izby",
+      "roomNumberPlaceholder": "Zadajte číslo izby (napr. 136)",
+      "phoneNumber": "Telefónne číslo (voliteľné)",
+      "phoneNumberPlaceholder": "Zadajte svoje telefónne číslo",
+      "submit": "Vytvoriť účet",
+      "hasAccount": "Už máte účet?",
+      "signIn": "Prihlásiť sa",
+      "success": "Účet úspešne vytvorený! Overte svoj email.",
+      "error": "Registrácia zlyhala. Skúste to znova.",
+      "validation": {
+        "firstNameRequired": "Meno je povinné",
+        "firstNameLetters": "Meno môže obsahovať iba písmená",
+        "lastNameRequired": "Priezvisko je povinné",
+        "lastNameLetters": "Priezvisko môže obsahovať iba písmená",
+        "usernameRequired": "Používateľské meno je povinné",
+        "usernameFormat": "Používateľské meno môže obsahovať iba písmená, čísla a podčiarkovníky",
+        "usernameNoSpaces": "Používateľské meno nemôže obsahovať medzery",
+        "emailRequired": "Emailová adresa je povinná",
+        "emailInvalid": "Zadajte platnú emailovú adresu",
+        "passwordRequired": "Heslo je povinné",
+        "passwordLength": "Heslo musí mať aspoň 8 znakov",
+        "passwordUppercase": "Heslo musí obsahovať aspoň jedno veľké písmeno",
+        "passwordLowercase": "Heslo musí obsahovať aspoň jedno malé písmeno",
+        "passwordNumber": "Heslo musí obsahovať aspoň jedno číslo",
+        "passwordMatch": "Heslá sa nezhodujú",
+        "roomNumberRequired": "Číslo izby je povinné",
+        "roomNumberFormat": "Číslo izby môže obsahovať iba čísla",
+        "phoneNumberFormat": "Zadajte platné telefónne číslo"
+      },
+      "passwordStrength": {
+        "label": "Sila hesla",
+        "weak": "Slabé",
+        "medium": "Stredné",
+        "strong": "Silné",
+        "requirementsTitle": "Požiadavky",
+        "requirements": {
+          "minLength": "Aspoň 8 znakov",
+          "uppercase": "Aspoň jedno veľké písmeno",
+          "lowercase": "Aspoň jedno malé písmeno",
+          "number": "Aspoň jedno číslo"
+        }
+      }
+    },
+    "verification": {
+      "title": "Overte svoj email",
+      "subtitle": "Poslali sme 6-ciferný kód na váš email",
+      "code": "Overovací kód",
+      "codePlaceholder": "Zadajte 6-ciferný kód",
+      "submit": "Overiť email",
+      "resend": "Poslať kód znova",
+      "resendSuccess": "Overovací kód odoslaný!",
+      "success": "Email úspešne overený!",
+      "error": "Neplatný alebo expirovaný kód. Skúste to znova.",
+      "expired": "Overovací kód expiroval. Požiadajte o nový."
+    },
+    "forgotPassword": {
+      "title": "Obnoviť heslo",
+      "subtitle": "Zadajte svoj email pre prijatie odkazu na obnovenie",
+      "email": "Emailová adresa",
+      "emailPlaceholder": "Zadajte svoj email",
+      "submit": "Poslať odkaz",
+      "backToLogin": "Späť na prihlásenie",
+      "success": "Odkaz na obnovenie hesla odoslaný! Skontrolujte svoj email.",
+      "error": "Odoslanie odkazu zlyhalo. Skúste to znova."
+    },
+    "resetPassword": {
+      "title": "Vytvoriť nové heslo",
+      "subtitle": "Zadajte svoje nové heslo",
+      "password": "Nové heslo",
+      "passwordPlaceholder": "Zadajte nové heslo",
+      "confirmPassword": "Potvrdiť nové heslo",
+      "confirmPasswordPlaceholder": "Potvrďte nové heslo",
+      "submit": "Obnoviť heslo",
+      "success": "Heslo úspešne obnovené! Teraz sa môžete prihlásiť.",
+      "error": "Obnovenie hesla zlyhalo. Skúste to znova.",
+      "tokenExpired": "Odkaz expiroval. Požiadajte o nový."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Vitajte späť, {name}!",
+    "overview": "Prehľad",
+    "machines": "Stroje",
+    "schedule": "Rozvrh",
+    "history": "História",
+    "notifications": "Upozornenia"
+  },
+  "machines": {
+    "title": "Stroje",
+    "available": "Dostupné",
+    "inUse": "V použití",
+    "maintenance": "Údržba",
+    "washers": "Práčky",
+    "dryers": "Sušičky",
+    "reserve": "Rezervovať",
+    "cancel": "Zrušiť rezerváciu",
+    "status": {
+      "available": "Dostupný",
+      "inUse": "V použití",
+      "reserved": "Rezervovaný",
+      "maintenance": "Údržba",
+      "offline": "Offline"
+    }
+  },
+  "notifications": {
+    "title": "Upozornenia",
+    "markAllRead": "Označiť všetko ako prečítané",
+    "noNotifications": "Žiadne upozornenia",
+    "types": {
+      "machineAvailable": "Stroj dostupný",
+      "cycleComplete": "Cyklus dokončený",
+      "reservationReminder": "Pripomienka rezervácie",
+      "maintenance": "Oznámenie o údržbe"
+    }
+  },
+  "errors": {
+    "generic": "Niečo sa pokazilo. Skúste to znova.",
+    "network": "Chyba siete. Skontrolujte svoje pripojenie.",
+    "unauthorized": "Nemáte oprávnenie vykonať túto akciu.",
+    "notFound": "Požadovaný zdroj nebol nájdený.",
+    "serverError": "Chyba servera. Skúste to neskôr."
+  }
+}
+

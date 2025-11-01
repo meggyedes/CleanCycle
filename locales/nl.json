@@ -1,0 +1,222 @@
+{
+  "common": {
+    "appName": "CleanCycle",
+    "loading": "Laden...",
+    "error": "Fout",
+    "success": "Succes",
+    "cancel": "Annuleren",
+    "confirm": "Bevestigen",
+    "save": "Opslaan",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "close": "Sluiten",
+    "back": "Terug",
+    "next": "Volgende",
+    "submit": "Verzenden",
+    "search": "Zoeken",
+    "filter": "Filteren",
+    "reset": "Resetten",
+    "logout": "Uitloggen",
+    "profile": "Profiel",
+    "settings": "Instellingen",
+    "help": "Help",
+    "about": "Over"
+  },
+  "landing": {
+    "title": "CleanCycle",
+    "subtitle": "Slim Wasserijbeheersysteem",
+    "description": "Beheer uw wasserij efficiënt met realtime machine tracking, slimme planning en geautomatiseerde meldingen.",
+    "getStarted": "Aan de slag",
+    "learnMore": "Meer informatie",
+    "features": {
+      "title": "Functies",
+      "subtitle": "Alles wat u nodig heeft voor efficiënt wasserijbeheer",
+      "realtime": {
+        "title": "Realtime tracking",
+        "description": "Monitor de beschikbaarheid en status van machines in realtime. Weet precies wanneer machines vrij zijn."
+      },
+      "scheduling": {
+        "title": "Slimme planning",
+        "description": "Reserveer machines van tevoren en ontvang een melding wanneer uw tijdslot klaar is."
+      },
+      "notifications": {
+        "title": "Directe meldingen",
+        "description": "Ontvang meldingen wanneer uw was klaar is of wanneer machines beschikbaar komen."
+      },
+      "analytics": {
+        "title": "Gebruiksanalyse",
+        "description": "Volg uw waspatronen en optimaliseer uw wasschema."
+      },
+      "multiRoom": {
+        "title": "Meerdere ruimtes",
+        "description": "Beheer meerdere wasruimtes met verschillende machines en schema's."
+      },
+      "secure": {
+        "title": "Veilig en privé",
+        "description": "Uw gegevens zijn versleuteld en veilig. We respecteren uw privacy."
+      }
+    },
+    "cta": {
+      "title": "Klaar om te beginnen?",
+      "description": "Word vandaag nog lid van CleanCycle en maak wasserijbeheer moeiteloos.",
+      "button": "Nu aanmelden"
+    }
+  },
+  "auth": {
+    "backToHome": "Terug",
+    "login": {
+      "title": "Inloggen",
+      "subtitle": "Welkom terug bij CleanCycle",
+      "email": "E-mailadres",
+      "emailPlaceholder": "Voer uw e-mailadres in",
+      "username": "Gebruikersnaam",
+      "usernamePlaceholder": "Voer uw gebruikersnaam in",
+      "password": "Wachtwoord",
+      "passwordPlaceholder": "Voer uw wachtwoord in",
+      "rememberMe": "Onthoud mij",
+      "forgotPassword": "Wachtwoord vergeten?",
+      "submit": "Inloggen",
+      "noAccount": "Nog geen account?",
+      "signUp": "Meld u nu aan!",
+      "success": "Succesvol ingelogd!",
+      "error": "Ongeldige inloggegevens. Probeer het opnieuw."
+    },
+    "register": {
+      "title": "Account aanmaken",
+      "subtitle": "Word vandaag lid van CleanCycle",
+      "firstName": "Voornaam",
+      "firstNamePlaceholder": "Voer uw voornaam in",
+      "lastName": "Achternaam",
+      "lastNamePlaceholder": "Voer uw achternaam in",
+      "username": "Gebruikersnaam",
+      "usernamePlaceholder": "Kies een gebruikersnaam",
+      "email": "E-mailadres",
+      "emailPlaceholder": "Voer uw e-mailadres in",
+      "password": "Wachtwoord",
+      "passwordPlaceholder": "Maak een wachtwoord",
+      "confirmPassword": "Bevestig wachtwoord",
+      "confirmPasswordPlaceholder": "Bevestig uw wachtwoord",
+      "roomNumber": "Kamernummer",
+      "roomNumberPlaceholder": "Voer kamernummer in (bijv. 136)",
+      "phoneNumber": "Telefoonnummer (optioneel)",
+      "phoneNumberPlaceholder": "Voer uw telefoonnummer in",
+      "submit": "Account aanmaken",
+      "hasAccount": "Heeft u al een account?",
+      "signIn": "Inloggen",
+      "success": "Account succesvol aangemaakt! Verifieer uw e-mail.",
+      "error": "Registratie mislukt. Probeer het opnieuw.",
+      "validation": {
+        "firstNameRequired": "Voornaam is verplicht",
+        "firstNameLetters": "Voornaam mag alleen letters bevatten",
+        "lastNameRequired": "Achternaam is verplicht",
+        "lastNameLetters": "Achternaam mag alleen letters bevatten",
+        "usernameRequired": "Gebruikersnaam is verplicht",
+        "usernameFormat": "Gebruikersnaam mag alleen letters, cijfers en underscores bevatten",
+        "usernameNoSpaces": "Gebruikersnaam mag geen spaties bevatten",
+        "emailRequired": "E-mailadres is verplicht",
+        "emailInvalid": "Voer een geldig e-mailadres in",
+        "passwordRequired": "Wachtwoord is verplicht",
+        "passwordLength": "Wachtwoord moet minimaal 8 tekens lang zijn",
+        "passwordUppercase": "Wachtwoord moet minimaal één hoofdletter bevatten",
+        "passwordLowercase": "Wachtwoord moet minimaal één kleine letter bevatten",
+        "passwordNumber": "Wachtwoord moet minimaal één cijfer bevatten",
+        "passwordMatch": "Wachtwoorden komen niet overeen",
+        "roomNumberRequired": "Kamernummer is verplicht",
+        "roomNumberFormat": "Kamernummer mag alleen cijfers bevatten",
+        "phoneNumberFormat": "Voer een geldig telefoonnummer in"
+      },
+      "passwordStrength": {
+        "label": "Wachtwoordsterkte",
+        "weak": "Zwak",
+        "medium": "Gemiddeld",
+        "strong": "Sterk",
+        "requirementsTitle": "Vereisten",
+        "requirements": {
+          "minLength": "Minimaal 8 tekens",
+          "uppercase": "Minimaal één hoofdletter",
+          "lowercase": "Minimaal één kleine letter",
+          "number": "Minimaal één cijfer"
+        }
+      }
+    },
+    "verification": {
+      "title": "Verifieer uw e-mail",
+      "subtitle": "We hebben een 6-cijferige code naar uw e-mail gestuurd",
+      "code": "Verificatiecode",
+      "codePlaceholder": "Voer 6-cijferige code in",
+      "submit": "E-mail verifiëren",
+      "resend": "Code opnieuw verzenden",
+      "resendSuccess": "Verificatiecode verzonden!",
+      "success": "E-mail succesvol geverifieerd!",
+      "error": "Ongeldige of verlopen code. Probeer het opnieuw.",
+      "expired": "Verificatiecode is verlopen. Vraag een nieuwe aan."
+    },
+    "forgotPassword": {
+      "title": "Wachtwoord resetten",
+      "subtitle": "Voer uw e-mailadres in om een resetlink te ontvangen",
+      "email": "E-mailadres",
+      "emailPlaceholder": "Voer uw e-mailadres in",
+      "submit": "Resetlink verzenden",
+      "backToLogin": "Terug naar inloggen",
+      "success": "Wachtwoord resetlink verzonden! Controleer uw e-mail.",
+      "error": "Verzenden van resetlink mislukt. Probeer het opnieuw."
+    },
+    "resetPassword": {
+      "title": "Nieuw wachtwoord aanmaken",
+      "subtitle": "Voer uw nieuwe wachtwoord in",
+      "password": "Nieuw wachtwoord",
+      "passwordPlaceholder": "Voer nieuw wachtwoord in",
+      "confirmPassword": "Bevestig nieuw wachtwoord",
+      "confirmPasswordPlaceholder": "Bevestig nieuw wachtwoord",
+      "submit": "Wachtwoord resetten",
+      "success": "Wachtwoord succesvol gereset! U kunt nu inloggen.",
+      "error": "Wachtwoord resetten mislukt. Probeer het opnieuw.",
+      "tokenExpired": "Resetlink is verlopen. Vraag een nieuwe aan."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welkom terug, {name}!",
+    "overview": "Overzicht",
+    "machines": "Machines",
+    "schedule": "Planning",
+    "history": "Geschiedenis",
+    "notifications": "Meldingen"
+  },
+  "machines": {
+    "title": "Machines",
+    "available": "Beschikbaar",
+    "inUse": "In gebruik",
+    "maintenance": "Onderhoud",
+    "washers": "Wasmachines",
+    "dryers": "Drogers",
+    "reserve": "Reserveren",
+    "cancel": "Reservering annuleren",
+    "status": {
+      "available": "Beschikbaar",
+      "inUse": "In gebruik",
+      "reserved": "Gereserveerd",
+      "maintenance": "Onderhoud",
+      "offline": "Offline"
+    }
+  },
+  "notifications": {
+    "title": "Meldingen",
+    "markAllRead": "Alles als gelezen markeren",
+    "noNotifications": "Geen meldingen",
+    "types": {
+      "machineAvailable": "Machine beschikbaar",
+      "cycleComplete": "Cyclus voltooid",
+      "reservationReminder": "Reserveringsherinnering",
+      "maintenance": "Onderhoudsbericht"
+    }
+  },
+  "errors": {
+    "generic": "Er is iets misgegaan. Probeer het opnieuw.",
+    "network": "Netwerkfout. Controleer uw verbinding.",
+    "unauthorized": "U bent niet geautoriseerd om deze actie uit te voeren.",
+    "notFound": "De gevraagde bron is niet gevonden.",
+    "serverError": "Serverfout. Probeer het later opnieuw."
+  }
+}
+
