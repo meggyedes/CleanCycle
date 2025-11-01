@@ -13,6 +13,7 @@ interface DashboardSummaryProps {
 export default function DashboardSummary({ userId }: DashboardSummaryProps) {
   const t = useTranslations('dashboard')
   const tMachines = useTranslations('machines')
+  const tCommon = useTranslations('common')
   const [dashboardStats, setDashboardStats] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const { reservations: upcomingReservations } = useUpcomingReservations(userId, 24)
@@ -48,7 +49,7 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
   }, [])
 
   if (loading) {
-    return <div className="text-center py-8">{t('loading')}</div>
+    return <div className="text-center py-8">{tCommon('loading')}</div>
   }
 
   return (
