@@ -15,6 +15,7 @@ interface StatsDashboardProps {
 
 export default function StatsDashboard({ userId }: StatsDashboardProps) {
   const t = useTranslations('common')
+  const tDash = useTranslations('dashboard')
   const { stats, loading } = useUserStatistics(userId)
   const [timeRange, setTimeRange] = useState<'7' | '30' | '90'>('30')
   const [chartData, setChartData] = useState<any>(null)
@@ -44,10 +45,16 @@ export default function StatsDashboard({ userId }: StatsDashboardProps) {
   }, [userId, timeRange])
 
   if (loading) {
-    return <div className="text-center py-8">Loading...</div>
+    return <div className="text-center py-8">{t('loading')}</div>
   }
 
   const COLORS = ['#14b8a6', '#06b6d4', '#8b5cf6', '#ec4899', '#f59e0b']
+
+  const timeRangeLabels: Record<'7' | '30' | '90', string> = {
+    '7': tDash('last7Days'),
+    '30': tDash('last30Days'),
+    '90': tDash('last90Days')
+  }
 
   return (
     <div className="space-y-6">
@@ -63,7 +70,7 @@ export default function StatsDashboard({ userId }: StatsDashboardProps) {
                 : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
             }`}
           >
-            Last {range} days
+            {timeRangeLabels[range]}
           </button>
         ))}
       </div>
@@ -71,19 +78,19 @@ export default function StatsDashboard({ userId }: StatsDashboardProps) {
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="bg-white rounded-lg shadow p-6">
-          <div className="text-gray-600 text-sm">Total Sessions</div>
+          <div className="text-gray-600 text-sm">{tDash('totalSessions')}</div>
           <div className="text-3xl font-bold text-teal-600">{stats?.totalSessions || 0}</div>
         </div>
         <div className="bg-white rounded-lg shadow p-6">
-          <div className="text-gray-600 text-sm">Total Minutes</div>
+          <div className="text-gray-600 text-sm">{tDash('totalMinutes')}</div>
           <div className="text-3xl font-bold text-teal-600">{Math.round(stats?.totalMinutes || 0)}</div>
         </div>
         <div className="bg-white rounded-lg shadow p-6">
-          <div className="text-gray-600 text-sm">Avg Duration</div>
+          <div className="text-gray-600 text-sm">{tDash('avgDuration')}</div>
           <div className="text-3xl font-bold text-teal-600">{Math.round(stats?.averageSessionDuration || 0)}m</div>
         </div>
         <div className="bg-white rounded-lg shadow p-6">
-          <div className="text-gray-600 text-sm">This Month</div>
+          <div className="text-gray-600 text-sm">{tDash('thisMonth')}</div>
           <div className="text-3xl font-bold text-teal-600">{stats?.thisMonthSessions || 0}</div>
         </div>
       </div>
@@ -91,7 +98,7 @@ export default function StatsDashboard({ userId }: StatsDashboardProps) {
       {/* Daily Usage Chart */}
       {chartData?.dailyData && chartData.dailyData.length > 0 && (
         <div className="bg-white rounded-lg shadow p-6">
-          <h3 className="text-xl font-bold mb-4">Daily Usage</h3>
+          <h3 className="text-xl font-bold mb-4">{tDash('dailyUsage')}</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData.dailyData}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -107,7 +114,7 @@ export default function StatsDashboard({ userId }: StatsDashboardProps) {
       {/* Machine Usage Distribution */}
       {chartData?.machineUsage && Object.keys(chartData.machineUsage).length > 0 && (
         <div className="bg-white rounded-lg shadow p-6">
-          <h3 className="text-xl font-bold mb-4">Machine Usage Distribution</h3>
+          <h3 className="text-xl font-bold mb-4">{tDash('usageByMachine')}</h3>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie

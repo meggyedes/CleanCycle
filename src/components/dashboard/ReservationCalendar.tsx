@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useUserReservations } from '@/hooks/useReservations'
 import { reservationService } from '@/services/reservationService'
 import { Database } from '@/types/database.types'
@@ -15,6 +15,8 @@ interface ReservationCalendarProps {
 
 export default function ReservationCalendar({ userId, machines }: ReservationCalendarProps) {
   const t = useTranslations('common')
+  const tDash = useTranslations('dashboard')
+  const locale = useLocale()
   const { reservations, loading, refetch } = useUserReservations(userId)
   const [selectedDate, setSelectedDate] = useState(new Date())
   const [selectedMachine, setSelectedMachine] = useState<number | null>(null)
@@ -126,7 +128,7 @@ export default function ReservationCalendar({ userId, machines }: ReservationCal
           <div className="flex justify-between items-center mb-4">
             <button onClick={handlePrevMonth} className="px-3 py-1 bg-gray-200 rounded">←</button>
             <h3 className="text-xl font-bold">
-              {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+              {selectedDate.toLocaleDateString(locale === 'hu' ? 'hu-HU' : locale === 'de' ? 'de-DE' : locale === 'fr' ? 'fr-FR' : locale === 'it' ? 'it-IT' : locale === 'nl' ? 'nl-NL' : 'en-US', { month: 'long', year: 'numeric' })}
             </h3>
             <button onClick={handleNextMonth} className="px-3 py-1 bg-gray-200 rounded">→</button>
           </div>
@@ -170,7 +172,7 @@ export default function ReservationCalendar({ userId, machines }: ReservationCal
         {/* Reservations for Selected Date */}
         <div className="bg-white rounded-lg shadow p-6">
           <h3 className="text-xl font-bold mb-4">
-            {selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
+            {selectedDate.toLocaleDateString(locale === 'hu' ? 'hu-HU' : locale === 'de' ? 'de-DE' : locale === 'fr' ? 'fr-FR' : locale === 'it' ? 'it-IT' : locale === 'nl' ? 'nl-NL' : 'en-US', { weekday: 'long', month: 'short', day: 'numeric' })}
           </h3>
 
           {dayReservations.length > 0 ? (
@@ -179,49 +181,49 @@ export default function ReservationCalendar({ userId, machines }: ReservationCal
                 <div key={res.id} className="border rounded p-3 bg-gray-50">
                   <div className="font-semibold">{res.machines?.name}</div>
                   <div className="text-sm text-gray-600">
-                    {new Date(res.start_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })} -
-                    {new Date(res.end_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
+                    {new Date(res.start_time).toLocaleTimeString(locale === 'hu' ? 'hu-HU' : locale === 'de' ? 'de-DE' : locale === 'fr' ? 'fr-FR' : locale === 'it' ? 'it-IT' : locale === 'nl' ? 'nl-NL' : 'en-US', { hour: '2-digit', minute: '2-digit' })} -
+                    {new Date(res.end_time).toLocaleTimeString(locale === 'hu' ? 'hu-HU' : locale === 'de' ? 'de-DE' : locale === 'fr' ? 'fr-FR' : locale === 'it' ? 'it-IT' : locale === 'nl' ? 'nl-NL' : 'en-US', { hour: '2-digit', minute: '2-digit' })}
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">Status: {res.status}</div>
+                  <div className="text-xs text-gray-500 mt-1">{tDash('status')}: {res.status}</div>
                   {res.status === 'pending' && (
                     <button
                       onClick={() => handleCancelReservation(res.id)}
                       className="text-xs text-red-600 hover:text-red-800 mt-2"
                     >
-                      Cancel
+                      {t('cancel')}
                     </button>
                   )}
                 </div>
               ))}
             </div>
           ) : (
-            <p className="text-gray-600 mb-4">No reservations for this date</p>
+            <p className="text-gray-600 mb-4">{tDash('noReservations')}</p>
           )}
 
           <button
             onClick={() => setShowForm(!showForm)}
             className="w-full mt-4 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600"
           >
-            {showForm ? 'Cancel' : 'New Reservation'}
+            {showForm ? t('cancel') : tDash('newReservation')}
           </button>
 
           {showForm && (
             <form onSubmit={handleReservationSubmit} className="mt-4 space-y-3">
               <div>
-                <label className="block text-sm font-medium mb-1">Machine</label>
+                <label className="block text-sm font-medium mb-1">{tDash('machine')}</label>
                 <select
                   value={selectedMachine || ''}
                   onChange={(e) => setSelectedMachine(parseInt(e.target.value))}
                   className="w-full px-3 py-2 border rounded"
                 >
-                  <option value="">Select a machine</option>
+                  <option value="">{tDash('selectMachine')}</option>
                   {machines.map(m => (
                     <option key={m.id} value={m.id}>{m.name}</option>
                   ))}
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Start Time</label>
+                <label className="block text-sm font-medium mb-1">{tDash('startTime')}</label>
                 <input
                   type="time"
                   value={formData.startTime}
@@ -230,7 +232,7 @@ export default function ReservationCalendar({ userId, machines }: ReservationCal
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">End Time</label>
+                <label className="block text-sm font-medium mb-1">{tDash('endTime')}</label>
                 <input
                   type="time"
                   value={formData.endTime}
@@ -243,7 +245,7 @@ export default function ReservationCalendar({ userId, machines }: ReservationCal
                 disabled={submitting}
                 className="w-full px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 disabled:opacity-50"
               >
-                {submitting ? 'Creating...' : 'Create Reservation'}
+                {submitting ? `${t('loading')}` : tDash('createReservation')}
               </button>
             </form>
           )}

@@ -48,17 +48,17 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
   }, [])
 
   if (loading) {
-    return <div className="text-center py-8">Loading...</div>
+    return <div className="text-center py-8">{t('loading')}</div>
   }
 
   return (
     <div className="space-y-6">
       {/* System Statistics */}
       <div>
-        <h2 className="text-2xl font-bold mb-4">System Status</h2>
+        <h2 className="text-2xl font-bold mb-4">{t('systemStatus')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
           <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-gray-600 text-sm">Total Machines</div>
+            <div className="text-gray-600 text-sm">{t('totalMachines')}</div>
             <div className="text-3xl font-bold text-teal-600">{dashboardStats?.totalMachines || 0}</div>
           </div>
           <div className="bg-green-50 rounded-lg shadow p-4">
@@ -78,7 +78,7 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
             <div className="text-3xl font-bold text-gray-600">{dashboardStats?.maintenanceMachines || 0}</div>
           </div>
           <div className="bg-black rounded-lg shadow p-4">
-            <div className="text-gray-300 text-sm">Broken</div>
+            <div className="text-gray-300 text-sm">{tMachines('status.broken') || 'Broken'}</div>
             <div className="text-3xl font-bold text-white">{dashboardStats?.brokenMachines || 0}</div>
           </div>
         </div>
@@ -86,22 +86,22 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
 
       {/* User Statistics */}
       <div>
-        <h2 className="text-2xl font-bold mb-4">Your Activity</h2>
+        <h2 className="text-2xl font-bold mb-4">{t('yourActivity')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-gray-600 text-sm">Total Sessions</div>
+            <div className="text-gray-600 text-sm">{t('totalSessions')}</div>
             <div className="text-3xl font-bold text-teal-600">{userStats?.totalSessions || 0}</div>
           </div>
           <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-gray-600 text-sm">Total Minutes</div>
+            <div className="text-gray-600 text-sm">{t('totalMinutes')}</div>
             <div className="text-3xl font-bold text-teal-600">{Math.round(userStats?.totalMinutes || 0)}</div>
           </div>
           <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-gray-600 text-sm">Avg Duration</div>
+            <div className="text-gray-600 text-sm">{t('avgDuration')}</div>
             <div className="text-3xl font-bold text-teal-600">{Math.round(userStats?.averageSessionDuration || 0)}m</div>
           </div>
           <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-gray-600 text-sm">This Month</div>
+            <div className="text-gray-600 text-sm">{t('thisMonth')}</div>
             <div className="text-3xl font-bold text-teal-600">{userStats?.thisMonthSessions || 0}</div>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
       {/* Upcoming Reservations */}
       {upcomingReservations.length > 0 && (
         <div>
-          <h2 className="text-2xl font-bold mb-4">Upcoming Reservations (Next 24h)</h2>
+          <h2 className="text-2xl font-bold mb-4">{t('upcomingReservations')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {upcomingReservations.slice(0, 4).map(reservation => (
               <div key={reservation.id} className="bg-white rounded-lg shadow p-4 border-l-4 border-teal-500">
@@ -124,7 +124,7 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
                   })}
                 </div>
                 <div className="text-xs text-gray-500 mt-2">
-                  Status: <span className="font-semibold capitalize">{reservation.status}</span>
+                  {t('status')}: <span className="font-semibold capitalize">{reservation.status}</span>
                 </div>
               </div>
             ))}
@@ -134,18 +134,18 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
 
       {/* Quick Stats */}
       <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg shadow p-6 text-white">
-        <h3 className="text-xl font-bold mb-2">Quick Stats</h3>
+        <h3 className="text-xl font-bold mb-2">{t('quickStats')}</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div>
-            <div className="text-sm opacity-90">Active Sessions</div>
+            <div className="text-sm opacity-90">{t('activeSessions')}</div>
             <div className="text-2xl font-bold">{dashboardStats?.activeSessions || 0}</div>
           </div>
           <div>
-            <div className="text-sm opacity-90">Total Users</div>
+            <div className="text-sm opacity-90">{t('totalUsers')}</div>
             <div className="text-2xl font-bold">{dashboardStats?.totalUsers || 0}</div>
           </div>
           <div>
-            <div className="text-sm opacity-90">Utilization</div>
+            <div className="text-sm opacity-90">{t('utilization')}</div>
             <div className="text-2xl font-bold">
               {dashboardStats?.availableMachines && dashboardStats?.totalMachines
                 ? Math.round(((dashboardStats.totalMachines - dashboardStats.availableMachines) / dashboardStats.totalMachines) * 100)
@@ -153,7 +153,7 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
             </div>
           </div>
           <div>
-            <div className="text-sm opacity-90">Your Reservations</div>
+            <div className="text-sm opacity-90">{t('yourReservations')}</div>
             <div className="text-2xl font-bold">{upcomingReservations.length}</div>
           </div>
         </div>
