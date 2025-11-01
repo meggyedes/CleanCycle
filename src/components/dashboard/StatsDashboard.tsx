@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 import { useUserStatistics } from '@/hooks/useUser'
 import { statisticsService } from '@/services/statisticsService'
 import {
@@ -13,6 +14,7 @@ interface StatsDashboardProps {
 }
 
 export default function StatsDashboard({ userId }: StatsDashboardProps) {
+  const t = useTranslations('common')
   const { stats, loading } = useUserStatistics(userId)
   const [timeRange, setTimeRange] = useState<'7' | '30' | '90'>('30')
   const [chartData, setChartData] = useState<any>(null)
@@ -42,7 +44,7 @@ export default function StatsDashboard({ userId }: StatsDashboardProps) {
   }, [userId, timeRange])
 
   if (loading) {
-    return <div className="text-center py-8">Loading statistics...</div>
+    return <div className="text-center py-8">Loading...</div>
   }
 
   const COLORS = ['#14b8a6', '#06b6d4', '#8b5cf6', '#ec4899', '#f59e0b']

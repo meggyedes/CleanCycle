@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 import { useUserProfile, useUserPreferences } from '@/hooks/useUser'
 import { userService } from '@/services/userService'
 
@@ -9,6 +10,7 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ userId }: UserProfileProps) {
+  const t = useTranslations('common')
   const { user, loading: userLoading, refetch: refetchUser } = useUserProfile(userId)
   const { preferences, loading: prefsLoading, updatePreferences } = useUserPreferences(userId)
 

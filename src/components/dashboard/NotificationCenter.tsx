@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { useInAppNotifications } from '@/hooks/useNotifications'
 
 interface NotificationCenterProps {
@@ -8,6 +9,7 @@ interface NotificationCenterProps {
 }
 
 export default function NotificationCenter({ userId }: NotificationCenterProps) {
+  const t = useTranslations('dashboard')
   const { notifications, unreadCount, dismissNotification } = useInAppNotifications(userId)
   const [isOpen, setIsOpen] = useState(false)
 
@@ -60,7 +62,7 @@ export default function NotificationCenter({ userId }: NotificationCenterProps) 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-96 bg-white rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto">
           <div className="p-4 border-b">
-            <h3 className="text-lg font-bold">Notifications</h3>
+            <h3 className="text-lg font-bold">{t('notifications')}</h3>
             {unreadCount > 0 && (
               <p className="text-sm text-gray-600">{unreadCount} unread</p>
             )}

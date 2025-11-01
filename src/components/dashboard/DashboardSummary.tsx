@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { statisticsService } from '@/services/statisticsService'
 import { useUpcomingReservations } from '@/hooks/useReservations'
 import { useUserStatistics } from '@/hooks/useUser'
@@ -10,6 +11,8 @@ interface DashboardSummaryProps {
 }
 
 export default function DashboardSummary({ userId }: DashboardSummaryProps) {
+  const t = useTranslations('dashboard')
+  const tMachines = useTranslations('machines')
   const [dashboardStats, setDashboardStats] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const { reservations: upcomingReservations } = useUpcomingReservations(userId, 24)
@@ -45,7 +48,7 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
   }, [])
 
   if (loading) {
-    return <div className="text-center py-8">Loading dashboard...</div>
+    return <div className="text-center py-8">Loading...</div>
   }
 
   return (
@@ -59,19 +62,19 @@ export default function DashboardSummary({ userId }: DashboardSummaryProps) {
             <div className="text-3xl font-bold text-teal-600">{dashboardStats?.totalMachines || 0}</div>
           </div>
           <div className="bg-green-50 rounded-lg shadow p-4">
-            <div className="text-gray-600 text-sm">Available</div>
+            <div className="text-gray-600 text-sm">{tMachines('status.available')}</div>
             <div className="text-3xl font-bold text-green-600">{dashboardStats?.availableMachines || 0}</div>
           </div>
           <div className="bg-red-50 rounded-lg shadow p-4">
-            <div className="text-gray-600 text-sm">In Use</div>
+            <div className="text-gray-600 text-sm">{tMachines('status.inUse')}</div>
             <div className="text-3xl font-bold text-red-600">{dashboardStats?.inUseMachines || 0}</div>
           </div>
           <div className="bg-yellow-50 rounded-lg shadow p-4">
-            <div className="text-gray-600 text-sm">Reserved</div>
+            <div className="text-gray-600 text-sm">{tMachines('status.reserved')}</div>
             <div className="text-3xl font-bold text-yellow-600">{dashboardStats?.reservedMachines || 0}</div>
           </div>
           <div className="bg-gray-50 rounded-lg shadow p-4">
-            <div className="text-gray-600 text-sm">Maintenance</div>
+            <div className="text-gray-600 text-sm">{tMachines('status.maintenance')}</div>
             <div className="text-3xl font-bold text-gray-600">{dashboardStats?.maintenanceMachines || 0}</div>
           </div>
           <div className="bg-black rounded-lg shadow p-4">
