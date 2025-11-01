@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 import { useUserReservations } from '@/hooks/useReservations'
 import { reservationService } from '@/services/reservationService'
 import { Database } from '@/types/database.types'
@@ -13,6 +14,7 @@ interface ReservationCalendarProps {
 }
 
 export default function ReservationCalendar({ userId, machines }: ReservationCalendarProps) {
+  const t = useTranslations('common')
   const { reservations, loading, refetch } = useUserReservations(userId)
   const [selectedDate, setSelectedDate] = useState(new Date())
   const [selectedMachine, setSelectedMachine] = useState<number | null>(null)

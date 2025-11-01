@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { createClient } from '@/lib/supabase/client'
 import { Database } from '@/types/database.types'
 
@@ -13,6 +14,7 @@ interface StartMachineModalProps {
 }
 
 export default function StartMachineModal({ machine, onClose, onSuccess }: StartMachineModalProps) {
+  const t = useTranslations('common')
   const [duration, setDuration] = useState(machine.default_duration)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -27,7 +29,7 @@ export default function StartMachineModal({ machine, onClose, onSuccess }: Start
       // Get current user
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) {
-        setError('Nincs bejelentkezve')
+        setError('Not logged in')
         setLoading(false)
         return
       }
@@ -72,7 +74,7 @@ export default function StartMachineModal({ machine, onClose, onSuccess }: Start
       onSuccess()
     } catch (err: any) {
       console.error('Error starting machine:', err)
-      setError(err.message || 'Hiba történt a gép indítása során')
+      setError(err.message || 'Error starting machine')
     } finally {
       setLoading(false)
     }
@@ -84,7 +86,7 @@ export default function StartMachineModal({ machine, onClose, onSuccess }: Start
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6">
         <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-          {machine.name} indítása
+          Start {machine.name}
         </h2>
 
         {error && (
@@ -95,7 +97,7 @@ export default function StartMachineModal({ machine, onClose, onSuccess }: Start
 
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Időtartam (perc)
+            Duration (minutes)
           </label>
           
           {/* Preset buttons */}
@@ -128,9 +130,9 @@ export default function StartMachineModal({ machine, onClose, onSuccess }: Start
 
         <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900 rounded-lg">
           <p className="text-sm text-gray-700 dark:text-gray-300">
-            <strong>Várható befejezés:</strong>
+            <strong>Expected End:</strong>
             <br />
-            {new Date(Date.now() + duration * 60000).toLocaleString('hu-HU', {
+            {new Date(Date.now() + duration * 60000).toLocaleString('en-US', {
               hour: '2-digit',
               minute: '2-digit',
               year: 'numeric',
@@ -146,7 +148,7 @@ export default function StartMachineModal({ machine, onClose, onSuccess }: Start
             disabled={loading}
             className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-4 rounded shadow transition duration-200 disabled:opacity-50 uppercase text-sm tracking-wide"
           >
-            Mégse
+            Cancel
           </button>
           <button
             onClick={handleStart}
@@ -159,10 +161,10 @@ export default function StartMachineModal({ machine, onClose, onSuccess }: Start
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Indítás...
+                Starting...
               </>
             ) : (
-              'Indítás'
+              'Start'
             )}
           </button>
         </div>
