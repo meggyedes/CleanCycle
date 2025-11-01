@@ -179,9 +179,16 @@
     "welcome": "Добре дошли обратно, {name}!",
     "overview": "Преглед",
     "machines": "Машини",
+    "statistics": "Статистика",
+    "reservations": "Резервации",
+    "profile": "Профил",
     "schedule": "График",
     "history": "История",
-    "notifications": "Известия"
+    "notifications": "Известия",
+    "quickMachineAccess": "Бърз достъп до машини",
+    "logout": "Излизане",
+    "selectRoom": "Изберете стая",
+    "noRoomsAvailable": "Няма налични стаи"
   },
   "machines": {
     "title": "Машини",

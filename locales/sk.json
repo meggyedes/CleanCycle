@@ -179,9 +179,16 @@
     "welcome": "Vitajte späť, {name}!",
     "overview": "Prehľad",
     "machines": "Stroje",
+    "statistics": "Štatistika",
+    "reservations": "Rezervácie",
+    "profile": "Profil",
     "schedule": "Rozvrh",
     "history": "História",
-    "notifications": "Upozornenia"
+    "notifications": "Upozornenia",
+    "quickMachineAccess": "Rýchly prístup k strojom",
+    "logout": "Odhlásiť sa",
+    "selectRoom": "Vyberte miestnosť",
+    "noRoomsAvailable": "Žiadne dostupné miestnosti"
   },
   "machines": {
     "title": "Stroje",

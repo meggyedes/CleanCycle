@@ -179,9 +179,16 @@
     "welcome": "Bienvenue, {name}!",
     "overview": "Aperçu",
     "machines": "Machines",
+    "statistics": "Statistiques",
+    "reservations": "Réservations",
+    "profile": "Profil",
     "schedule": "Planning",
     "history": "Historique",
-    "notifications": "Notifications"
+    "notifications": "Notifications",
+    "quickMachineAccess": "Accès rapide aux machines",
+    "logout": "Déconnexion",
+    "selectRoom": "Sélectionner une salle",
+    "noRoomsAvailable": "Aucune salle disponible"
   },
   "machines": {
     "title": "Machines",

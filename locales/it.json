@@ -179,9 +179,16 @@
     "welcome": "Bentornato, {name}!",
     "overview": "Panoramica",
     "machines": "Macchine",
+    "statistics": "Statistiche",
+    "reservations": "Prenotazioni",
+    "profile": "Profilo",
     "schedule": "Programma",
     "history": "Cronologia",
-    "notifications": "Notifiche"
+    "notifications": "Notifiche",
+    "quickMachineAccess": "Accesso rapido alle macchine",
+    "logout": "Esci",
+    "selectRoom": "Seleziona stanza",
+    "noRoomsAvailable": "Nessuna stanza disponibile"
   },
   "machines": {
     "title": "Macchine",

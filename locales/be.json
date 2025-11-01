@@ -179,9 +179,16 @@
     "welcome": "Welkom terug, {name}!",
     "overview": "Overzicht",
     "machines": "Machines",
+    "statistics": "Statistieken",
+    "reservations": "Reserveringen",
+    "profile": "Profiel",
     "schedule": "Planning",
     "history": "Geschiedenis",
-    "notifications": "Meldingen"
+    "notifications": "Meldingen",
+    "quickMachineAccess": "Snelle machinebereik",
+    "logout": "Afmelden",
+    "selectRoom": "Kamer selecteren",
+    "noRoomsAvailable": "Geen kamers beschikbaar"
   },
   "machines": {
     "title": "Machines",
