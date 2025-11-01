@@ -11,6 +11,7 @@ interface UserProfileProps {
 
 export default function UserProfile({ userId }: UserProfileProps) {
   const t = useTranslations('common')
+  const tDash = useTranslations('dashboard')
   const { user, loading: userLoading, refetch: refetchUser } = useUserProfile(userId)
   const { preferences, loading: prefsLoading, updatePreferences } = useUserPreferences(userId)
 
@@ -55,11 +56,11 @@ export default function UserProfile({ userId }: UserProfileProps) {
         phone: formData.phone,
         apartment_number: formData.apartment_number
       } as any)
-      setMessage({ type: 'success', text: 'Profile updated successfully!' })
+      setMessage({ type: 'success', text: tDash('profileUpdatedSuccessfully') })
       setEditMode(false)
       await refetchUser()
     } catch (error) {
-      setMessage({ type: 'error', text: 'Failed to update profile' })
+      setMessage({ type: 'error', text: tDash('failedToUpdateProfile') })
     } finally {
       setLoading(false)
     }
@@ -68,22 +69,22 @@ export default function UserProfile({ userId }: UserProfileProps) {
   const handlePasswordChange = async (e: React.FormEvent) => {
     e.preventDefault()
     if (passwordData.newPassword !== passwordData.confirmPassword) {
-      setMessage({ type: 'error', text: 'Passwords do not match' })
+      setMessage({ type: 'error', text: tDash('passwordsDoNotMatch') })
       return
     }
     if (passwordData.newPassword.length < 6) {
-      setMessage({ type: 'error', text: 'Password must be at least 6 characters' })
+      setMessage({ type: 'error', text: tDash('passwordMustBeAtLeast6Characters') })
       return
     }
 
     setLoading(true)
     try {
       await userService.changePassword(passwordData.newPassword)
-      setMessage({ type: 'success', text: 'Password changed successfully!' })
+      setMessage({ type: 'success', text: tDash('passwordChangedSuccessfully') })
       setPasswordMode(false)
       setPasswordData({ newPassword: '', confirmPassword: '' })
     } catch (error) {
-      setMessage({ type: 'error', text: 'Failed to change password' })
+      setMessage({ type: 'error', text: tDash('failedToChangePassword') })
     } finally {
       setLoading(false)
     }
@@ -92,14 +93,14 @@ export default function UserProfile({ userId }: UserProfileProps) {
   const handlePreferencesChange = async (key: string, value: any) => {
     try {
       await updatePreferences({ [key]: value } as any)
-      setMessage({ type: 'success', text: 'Preferences updated!' })
+      setMessage({ type: 'success', text: tDash('preferencesUpdated') })
     } catch (error) {
-      setMessage({ type: 'error', text: 'Failed to update preferences' })
+      setMessage({ type: 'error', text: tDash('failedToUpdatePreferences') })
     }
   }
 
   if (userLoading || prefsLoading) {
-    return <div className="text-center py-8">Loading...</div>
+    return <div className="text-center py-8">{t('loading')}</div>
   }
 
   return (
@@ -114,19 +115,19 @@ export default function UserProfile({ userId }: UserProfileProps) {
       {/* Profile Section */}
       <div className="bg-white rounded-lg shadow p-6">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold">Personal Information</h2>
+          <h2 className="text-2xl font-bold">{tDash('personalInformation')}</h2>
           <button
             onClick={() => setEditMode(!editMode)}
             className="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600"
           >
-            {editMode ? 'Cancel' : 'Edit'}
+            {editMode ? t('cancel') : t('edit')}
           </button>
         </div>
 
         {editMode ? (
           <form onSubmit={handleProfileSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Name</label>
+              <label className="block text-sm font-medium mb-1">{t('profile')}</label>
               <input
                 type="text"
                 name="name"
@@ -136,7 +137,7 @@ export default function UserProfile({ userId }: UserProfileProps) {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Email</label>
+              <label className="block text-sm font-medium mb-1">{t('email')}</label>
               <input
                 type="email"
                 value={formData.email}
@@ -145,7 +146,7 @@ export default function UserProfile({ userId }: UserProfileProps) {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Phone</label>
+              <label className="block text-sm font-medium mb-1">{t('phone')}</label>
               <input
                 type="tel"
                 name="phone"
@@ -155,7 +156,7 @@ export default function UserProfile({ userId }: UserProfileProps) {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Apartment Number</label>
+              <label className="block text-sm font-medium mb-1">{t('apartment')}</label>
               <input
                 type="text"
                 name="apartment_number"
@@ -169,22 +170,22 @@ export default function UserProfile({ userId }: UserProfileProps) {
               disabled={loading}
               className="w-full px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 disabled:opacity-50"
             >
-              {loading ? 'Saving...' : 'Save Changes'}
+              {loading ? `${tDash('saving')}` : tDash('saveChanges')}
             </button>
           </form>
         ) : (
           <div className="space-y-3">
-            <div><strong>Name:</strong> {user?.name || 'Not set'}</div>
-            <div><strong>Email:</strong> {user?.email}</div>
-            <div><strong>Phone:</strong> {user?.phone || 'Not set'}</div>
-            <div><strong>Apartment:</strong> {user?.apartment_number || 'Not set'}</div>
+            <div><strong>{t('profile')}:</strong> {user?.name || tDash('notSet')}</div>
+            <div><strong>{t('email')}:</strong> {user?.email}</div>
+            <div><strong>{t('phone')}:</strong> {user?.phone || tDash('notSet')}</div>
+            <div><strong>{t('apartment')}:</strong> {user?.apartment_number || tDash('notSet')}</div>
           </div>
         )}
       </div>
 
       {/* Preferences Section */}
       <div className="bg-white rounded-lg shadow p-6">
-        <h2 className="text-2xl font-bold mb-4">Notification Preferences</h2>
+        <h2 className="text-2xl font-bold mb-4">{tDash('notificationPreferences')}</h2>
         <div className="space-y-4">
           <label className="flex items-center">
             <input
@@ -193,7 +194,7 @@ export default function UserProfile({ userId }: UserProfileProps) {
               onChange={(e) => handlePreferencesChange('email_notifications', e.target.checked)}
               className="mr-3"
             />
-            <span>Email Notifications</span>
+            <span>{tDash('emailNotifications')}</span>
           </label>
           <label className="flex items-center">
             <input
@@ -202,7 +203,7 @@ export default function UserProfile({ userId }: UserProfileProps) {
               onChange={(e) => handlePreferencesChange('push_notifications', e.target.checked)}
               className="mr-3"
             />
-            <span>Push Notifications</span>
+            <span>{tDash('pushNotifications')}</span>
           </label>
           <label className="flex items-center">
             <input
@@ -211,10 +212,10 @@ export default function UserProfile({ userId }: UserProfileProps) {
               onChange={(e) => handlePreferencesChange('in_app_notifications', e.target.checked)}
               className="mr-3"
             />
-            <span>In-App Notifications</span>
+            <span>{tDash('inAppNotifications')}</span>
           </label>
           <div>
-            <label className="block text-sm font-medium mb-1">Reminder Time (minutes before)</label>
+            <label className="block text-sm font-medium mb-1">{tDash('reminderTime')}</label>
             <input
               type="number"
               value={preferences?.notification_reminder_minutes || 15}
@@ -230,19 +231,19 @@ export default function UserProfile({ userId }: UserProfileProps) {
       {/* Password Section */}
       <div className="bg-white rounded-lg shadow p-6">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold">Security</h2>
+          <h2 className="text-2xl font-bold">{tDash('security')}</h2>
           <button
             onClick={() => setPasswordMode(!passwordMode)}
             className="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600"
           >
-            {passwordMode ? 'Cancel' : 'Change Password'}
+            {passwordMode ? t('cancel') : tDash('changePassword')}
           </button>
         </div>
 
         {passwordMode && (
           <form onSubmit={handlePasswordChange} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium mb-1">New Password</label>
+              <label className="block text-sm font-medium mb-1">{tDash('newPassword')}</label>
               <input
                 type="password"
                 value={passwordData.newPassword}
@@ -251,7 +252,7 @@ export default function UserProfile({ userId }: UserProfileProps) {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Confirm Password</label>
+              <label className="block text-sm font-medium mb-1">{tDash('confirmPassword')}</label>
               <input
                 type="password"
                 value={passwordData.confirmPassword}
@@ -264,7 +265,7 @@ export default function UserProfile({ userId }: UserProfileProps) {
               disabled={loading}
               className="w-full px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 disabled:opacity-50"
             >
-              {loading ? 'Updating...' : 'Update Password'}
+              {loading ? `${tDash('saving')}` : tDash('updatePassword')}
             </button>
           </form>
         )}

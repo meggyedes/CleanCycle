@@ -19,6 +19,7 @@ interface MachineCardProps {
 
 export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
   const t = useTranslations('machines')
+  const tDash = useTranslations('dashboard')
   const [showModal, setShowModal] = useState(false)
   const [timeRemaining, setTimeRemaining] = useState<string>('')
 
@@ -30,7 +31,7 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
         const diff = endTime.getTime() - now.getTime()
 
         if (diff <= 0) {
-          setTimeRemaining('Expired')
+          setTimeRemaining(tDash('expired') || 'Expired')
           onUpdate()
         } else {
           const minutes = Math.floor(diff / 60000)
@@ -71,9 +72,9 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
       case 'maintenance':
         return t('status.maintenance')
       case 'broken':
-        return 'Broken'
+        return t('status.broken') || 'Broken'
       default:
-        return 'Unknown'
+        return t('status.unknown') || 'Unknown'
     }
   }
 
@@ -122,7 +123,7 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
           {/* Time Remaining */}
           {machine.status === 'running' && timeRemaining && (
             <div className="mb-4">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Time Remaining:</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">{tDash('timeRemaining')}:</p>
               <p className="text-2xl font-bold text-gray-800 dark:text-white">
                 {timeRemaining}
               </p>
@@ -133,7 +134,7 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
           {machine.status === 'free' && (
             <div className="mb-4">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Default Duration: {machine.default_duration} minutes
+                {tDash('defaultDuration')}: {machine.default_duration} minutes
               </p>
             </div>
           )}
@@ -144,14 +145,14 @@ export default function MachineCard({ machine, onUpdate }: MachineCardProps) {
               onClick={() => setShowModal(true)}
               className="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded shadow-lg transition duration-200 uppercase text-sm tracking-wide"
             >
-              Start
+              {tDash('start')}
             </button>
           )}
 
           {machine.status === 'running' && machine.currentSession && (
             <div className="text-sm text-gray-600 dark:text-gray-400">
-              <p>Started: {new Date(machine.currentSession.start_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
-              <p>Expected End: {new Date(machine.currentSession.end_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+              <p>{tDash('started')}: {new Date(machine.currentSession.start_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+              <p>{tDash('expectedEndTime')}: {new Date(machine.currentSession.end_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
             </div>
           )}
         </div>

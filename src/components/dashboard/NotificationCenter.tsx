@@ -10,6 +10,7 @@ interface NotificationCenterProps {
 
 export default function NotificationCenter({ userId }: NotificationCenterProps) {
   const t = useTranslations('dashboard')
+  const tCommon = useTranslations('common')
   const { notifications, unreadCount, dismissNotification } = useInAppNotifications(userId)
   const [isOpen, setIsOpen] = useState(false)
 
@@ -64,7 +65,7 @@ export default function NotificationCenter({ userId }: NotificationCenterProps) 
           <div className="p-4 border-b">
             <h3 className="text-lg font-bold">{t('notifications')}</h3>
             {unreadCount > 0 && (
-              <p className="text-sm text-gray-600">{unreadCount} unread</p>
+              <p className="text-sm text-gray-600">{unreadCount} {t('unread')}</p>
             )}
           </div>
 
@@ -100,7 +101,7 @@ export default function NotificationCenter({ userId }: NotificationCenterProps) 
             </div>
           ) : (
             <div className="p-8 text-center text-gray-500">
-              <p>No notifications</p>
+              <p>{t('noNotifications')}</p>
             </div>
           )}
 
@@ -109,7 +110,7 @@ export default function NotificationCenter({ userId }: NotificationCenterProps) 
               onClick={() => setIsOpen(false)}
               className="w-full px-4 py-2 text-sm text-gray-600 hover:text-gray-900"
             >
-              Close
+              {t('close')}
             </button>
           </div>
         </div>

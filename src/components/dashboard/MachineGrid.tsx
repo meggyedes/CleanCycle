@@ -21,6 +21,7 @@ interface MachineGridProps {
 export default function MachineGrid({ rooms }: MachineGridProps) {
   const t = useTranslations('machines')
   const tCommon = useTranslations('common')
+  const tDash = useTranslations('dashboard')
   const [machines, setMachines] = useState<MachineWithSession[]>([])
   const [selectedRoom, setSelectedRoom] = useState<number | null>(null)
   const [loading, setLoading] = useState(true)
@@ -127,7 +128,7 @@ export default function MachineGrid({ rooms }: MachineGridProps) {
       {/* Refresh Button */}
       <div className="flex justify-between items-center bg-teal-50 p-4 rounded shadow">
         <div className="text-sm text-gray-700">
-          🔄 Auto-refresh every 5 seconds
+          {tDash('autoRefreshEvery5Seconds')}
         </div>
         <button
           onClick={fetchMachines}
@@ -137,7 +138,7 @@ export default function MachineGrid({ rooms }: MachineGridProps) {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          Refresh Now
+          {tDash('refreshNow')}
         </button>
       </div>
 
@@ -179,7 +180,7 @@ export default function MachineGrid({ rooms }: MachineGridProps) {
       {/* No machines message */}
       {machines.length === 0 && !loading && (
         <div className="text-center py-12 bg-gray-50 rounded-lg">
-          <p className="text-gray-600 text-lg">No machines in this room</p>
+          <p className="text-gray-600 text-lg">{tDash('noMachinesInThisRoom')}</p>
         </div>
       )}
     </div>
