@@ -1,6 +1,3 @@
-import { getRequestConfig } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-
 // Támogatott nyelvek
 export const locales = ['en', 'hu', 'nl', 'de', 'fr', 'it', 'be', 'bg', 'sk'] as const;
 export type Locale = (typeof locales)[number];
@@ -46,14 +43,4 @@ export const localeFlagIcons: Record<Locale, string> = {
   bg: 'bg', // Bulgaria
   sk: 'sk', // Slovakia
 };
-
-export default getRequestConfig(async ({ locale }) => {
-  // Validate that the incoming `locale` parameter is valid
-  const validLocale = locale && locales.includes(locale as Locale) ? locale : defaultLocale;
-
-  return {
-    locale: validLocale,
-    messages: (await import(`../../locales/${validLocale}.json`)).default,
-  };
-});
 
